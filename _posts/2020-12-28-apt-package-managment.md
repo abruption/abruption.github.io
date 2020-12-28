@@ -24,3 +24,7 @@ The following packages have been kept back:
 <br />
 
 >검색하다보면 `apt-get dist-upgrade`로도 가능하다고 하는데 일반적인 환경에서는 위험할 수 있다고 한다.
+
+<br/><br/>
+
+<https://qastack.kr/ubuntu/601/the-following-packages-have-been-kept-back-why-and-how-do-i-solve-it>
