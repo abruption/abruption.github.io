@@ -1,7 +1,7 @@
 ---
 title: Linux에서 Crontab을 통한 자동백업
 author: LEE YEONGUK
-date: 2020-06-04 17:19:00 +0900
+date: 2020-06-03 18:15:00 +0900
 categories: [Leature, Enterprise Server]
 tags: [Linux, WAS]
 ---
