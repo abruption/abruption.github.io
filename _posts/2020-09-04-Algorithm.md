@@ -16,6 +16,7 @@ tags: [Algorithm, Data Structure]
     -   유한성(finiteness) : 알고리즘은 수행 뒤에 반드시 종료되어야 한다.
     -   효과성(effectiveness) : 알고리즘의 모든 명령어들은 기본적이며 실행이 가능해야 한다.  
 
+<br/>
 
 ## 알고리즘의 표현 방법의 종류
     
@@ -30,6 +31,7 @@ tags: [Algorithm, Data Structure]
     -   특정 프로그래밍 언어가 아니므로 직접 실행은 불가능
     -   일반적인 프로그래밍 언어의 형태이므로 원하는 특정 프로그래밍 언어로의 변환 용이
 
+<br/>
 
 ### 기본 요소
 
@@ -66,6 +68,7 @@ tags: [Algorithm, Data Structure]
         -   return 결과값; end
     - 함수의 호출과 실행 및 결과값 반환에 대한 흐름제어
 
+<br/>
 
 ## 알고리즘 성능 분석 방법
 

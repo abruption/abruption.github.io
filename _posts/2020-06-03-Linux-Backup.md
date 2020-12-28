@@ -11,14 +11,20 @@ tags: [Linux, WAS]
 
 ![linux1](/assets/img/sample/linux1.jpg)
 
+<br/>
+
 ## 쉘스크립트 위치와 백업 저장위치 생성 (mkdir 명령어 이용)
 - cd 명령어를 이용하여 `/home` 디렉토리에서 `mkdir backup` 실행
 - cd 명령어를 이용하여 `/home/inhatc` 디렉토리에서 `mkdir scripts` 실행
 
 ![linux2](/assets/img/sample/linux2.jpg)
 
+<br/>
+
 ## backup 디렉토리의 권한 설정 (chmod 명령어 이용)
 ![linux3](/assets/img/sample/linux3.jpg)
+
+<br/>
 
 ## 백업을 위한 쉘스크립트 작성 후 권한설정
 ~~~bash
@@ -37,10 +43,16 @@ find /home/backup/ -type f -mtime +5 | sort | xargs rm -f
 - `chmod 700 backup.sh` : 쉘스크립트 실행을 위해 `chmod` 명령어를 이용하여 사용자에게만 읽기, 쓰기, 실 행 모든 권한을 부여한다.
 - `./backup.sh` : 쉘스크립트가 동작하도록 실행시킨다.
 
+
+<br/>
+
 ### tar 명령어
 - 여러개의 파일을 하나로 묶는 명령어(=압축)
 - `# tar [OPTION] [ADD tar FILE] [FILE LIST]`
 - `# tar [OPTION] [tar FILE] -C [UNZIP LOCATION]`
+
+
+<br/>
 
 ### find 명령어
 - 파일 및 디렉토리를 검색할 때 사용하는 명령어
@@ -48,12 +60,17 @@ find /home/backup/ -type f -mtime +5 | sort | xargs rm -f
 - `type`은 지정된 파일 타입에 해당되는 파일을 검색하는 표현식이다.
 
 
+<br/>
+
 ## Crontab을 이용하여 스케줄러를 생성
 - 모든 엔트리 필드는 공백으로 구분된다.
 - 한 줄당 하나의 명령 (두줄로 나눠서 표시할 수 없음)
 - #으로 시작하는 줄을 실행하지 않는다. (=주석)
 - `# crontab [OPTION] FILE`
 - `# crontab [OPTION]`
+
+
+<br/>
 
 ### Crontab 파일 형식
 - 첫 번째 필드는 분을 의미하며 범위는 0-59이다.
@@ -69,6 +86,8 @@ find /home/backup/ -type f -mtime +5 | sort | xargs rm -f
 - 일일 백업(매일 17시 백업)을 위해 crontab 파일에 `0 17 * * * /home/inhatc/scripts/backup.sh`라고 작성하고 저장한다.
 
 
+<br/>
+
 ## 작성한 쉘 스크립트가 정상적으로 실행되어 백업 파일이 생성되었는지 확인
 - 정상적으로 백업파일이 생성되었으며, `today` 변수를 이용하여 파일명에 생성날짜를 추가한 것도 정상적으로 동작하는 것을 확인할 수 있다.
 
@@ -77,6 +96,7 @@ find /home/backup/ -type f -mtime +5 | sort | xargs rm -f
 - 생성된 백업파일을 내용을 확인하기 위해서는 아래 `tar` 명령어를 사용하면 된다.
 - `tar tvf FILENAME.tar` 또는 `tar tvfz FILENAME.tar.gz`
 
+<br/>
 
 **[실행결과]**
 
