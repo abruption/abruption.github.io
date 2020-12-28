@@ -26,17 +26,12 @@ avatar: /assets/img/sample/profile.png   # support internet resources
 github:
   username: abruption             # change to your github username
 
-instagram:
-  username: 1997_04_12            # change to your twitter username
-
 social:
   name: LEE YEONGUK                  # it will shows as the copyright owner in Footer
   email: hashcode@kakao.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://www.abruption.ml      
     - https://github.com/abruption       # change to your github homepage
-    - https://www.instagram.com/1997_04_12
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
