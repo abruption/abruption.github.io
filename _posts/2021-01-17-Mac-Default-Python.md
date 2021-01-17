@@ -30,10 +30,10 @@ brew install python
 ## Mac에서 Python 기본버전 변경하기
 
 터미널에서 `python` 명령어를 입력하면 아래와 같은 결과가 나오고,
-![python](../assets/img/sample/python.png)
+![python](/assets/img/sample/python.png)
 
 `python3` 명령어를 입력하면 아래와 같은 결과가 나온다.
-![python3](../assets/img/sample/python3.png)
+![python3](/assets/img/sample/python3.png)
 
 두 개의 버전이 공존하는 상황이지만 `python -V` 명령어를 사용하면 구버전인 2.7 버전이 나오게 된다.   
 최신 버전인 Python 3.8.5를 기본버전으로 변경하기 위해서는 다음 명령어 중 하나를 선택하여 적용한다.
