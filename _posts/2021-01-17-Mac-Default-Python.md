@@ -14,7 +14,7 @@ Mac에서 Python을 사용하려고 `HomeBrew`나 `python -V` 명령어를 이�
 아래와 같이 Terminal을 실행하여 아래의 명령어를 입력하여 HomeBrew를 설치한다.
 
 ~~~bash
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ~~~
 
 
