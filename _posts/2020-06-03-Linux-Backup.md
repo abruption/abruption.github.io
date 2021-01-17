@@ -2,8 +2,8 @@
 title: Linux에서 Crontab을 통한 자동백업
 author: LEE YEONGUK
 date: 2020-06-03 18:15:00 +0900
-categories: [Leature, Enterprise Server]
-tags: [Linux, WAS]
+categories: [Programming, Ubuntu]
+tags: [Ubuntu, Backup, Shell]
 ---
 
 ## 디렉토리 생성 및 쉘스크립트 작성을 위한 ROOT 계정 로그인
