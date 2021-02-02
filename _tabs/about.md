@@ -29,7 +29,7 @@ order: 4
 - ~~Apple iPhone 7, Space Gray~~
 - ~~Apple iPhone X, Silver~~
 - ~~Apple AirPods~~
-- ~~~Apple Macbook Early 2016, Rose Gold~~~
+- ~~Apple Macbook Early 2016, Rose Gold~~
 
 ## Interested
 - Starbucks
