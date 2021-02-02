@@ -22,13 +22,14 @@ order: 4
 - Apple iPad Mini 5, Space Gray
 - Apple Pencil 1st
 - Apple Watch Series 4, Space Gray
-- Apple Macbook Early 2016, Rose Gold
+- Apple Macbook Air M1 2020, Space Gray
 - Apple MacMini Late 2018, Space Gray
 - Apple AirPods Pro   
 - ~~Apple iPhone 5S, Gold~~
 - ~~Apple iPhone 7, Space Gray~~
 - ~~Apple iPhone X, Silver~~
 - ~~Apple AirPods~~
+- ~~~Apple Macbook Early 2016, Rose Gold~~~
 
 ## Interested
 - Starbucks
