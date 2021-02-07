@@ -1,7 +1,7 @@
 ---
 title: Apple M1 Mac에서 Homebrew 설치하기
 author: LEE YEONGUK
-date: 2021-02-03 15:30:00 +0900
+date: 2021-02-07 13:00:00 +0900
 categories: [Programming, Mac]
 tags: [M1, Silicon, Apple, Mac]
 ---
@@ -9,8 +9,8 @@ tags: [M1, Silicon, Apple, Mac]
 이 글을 읽고 있다면 당신은 M1 Mac을 사용하고 있을 것이다.
 macOS 10.15 Catalina부터 기본 쉘(Shell)이 `bash`에서 `zsh`로 변경되었기때문에 zsh 기반으로 설명 할 예정이다.
 
-먼저 Homebrew는 2020년 12월 1일 2.6.0 버전에서 M1/Apple Silicon/ARM을 Native로 지원하기 시작했다
-<https://brew.sh/2020/12/01/homebrew-2.6.0/>
+먼저 Homebrew는 2021년 2월 5일 3.0 버전에서 M1/Apple Silicon/ARM을 Native로 지원하기 시작했다
+<https://brew.sh/2021/02/05/homebrew-3.0.0/>
 
 또한, M1/Apple Silicon/ARM 지원 기기들의 Homebrew 기본 디렉토리가 기존의 `/usr/local`에서 `/opt/homebrew`로 변경되었으니 설치 시 참고하길.
 
