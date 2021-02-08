@@ -1,5 +1,5 @@
 ---
-title: Apple Silicone Mac에 Jekyll 설치하기
+title: Apple Silicon Mac에 Jekyll 설치하기
 author: LEE YEONGUK
 date: 2021-02-08 09:30:00 +0900
 categories: [Programming, Mac]
