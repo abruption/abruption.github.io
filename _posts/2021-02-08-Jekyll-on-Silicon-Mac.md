@@ -17,7 +17,7 @@ Intel 맥에서 Apple Silicon M1 맥으로 기변한 이후에 Github Page에 �
 ## Homebrew 설치하기
 
 맥에서는 Homebrew를 이용하여 간단하게 설치할 수 있으므로, Homebrew 설치방법은 기존에 작성했던 게시글을 참고하자.   
-<https://blog.abruption.ml/posts/M1-Mac-Install-Homebrew/>
+<https://abruption.github.io/posts/M1-Mac-Install-Homebrew/>
 
 <br />
 
