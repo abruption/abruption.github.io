@@ -1,6 +1,6 @@
 ---
 title: Oh-My-Zsh과 iTerm2를 이용하여 Mac 터미널 꾸미기
-author: LEE YEONGUK
+author: abruption
 date: 2021-02-10 08:55:00 +0900
 categories: [Programming, Mac]
 tags: [Mac, iTerm2, Oh-My-Zsh, Zsh]

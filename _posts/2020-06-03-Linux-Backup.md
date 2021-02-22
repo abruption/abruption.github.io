@@ -1,6 +1,6 @@
 ---
 title: Linux에서 Crontab을 통한 자동백업
-author: LEE YEONGUK
+author: abruption
 date: 2020-06-03 18:15:00 +0900
 categories: [Programming, Ubuntu]
 tags: [Ubuntu, Backup, Shell]

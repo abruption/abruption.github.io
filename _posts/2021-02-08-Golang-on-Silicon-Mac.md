@@ -1,6 +1,6 @@
 ---
 title: Apple Silicon Mac에 Golang 설치하기
-author: LEE YEONGUK
+author: abruption
 date: 2021-02-08 13:30:00 +0900
 categories: [Programming, Mac]
 tags: [M1, Silicon, Apple, Mac, Golang, Google]

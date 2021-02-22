@@ -1,6 +1,6 @@
 ---
 title: Apple M1 Mac에서 Homebrew 설치하기
-author: LEE YEONGUK
+author: abruption
 date: 2021-02-07 13:00:00 +0900
 categories: [Programming, Mac]
 tags: [M1, Silicon, Apple, Mac]

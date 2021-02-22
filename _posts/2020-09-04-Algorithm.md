@@ -1,6 +1,6 @@
 ---
 title: 알고리즘(표현방법의 종류)이란?
-author: LEE YEONGUK
+author: abruption
 date: 2020-09-04 13:02:00 +0900
 categories: [Leature, Data Structure]
 tags: [Algorithm, Data Structure]

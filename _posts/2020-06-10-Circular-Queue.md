@@ -1,6 +1,6 @@
 ---
 title: 원형 Queue(큐)에서의 삽입&삭제 연산
-author: LEE YEONGUK
+author: abruption
 date: 2020-06-10 00:22:00 +0900
 categories: [Leature, Data Structure]
 tags: [Queue, Data Structure]

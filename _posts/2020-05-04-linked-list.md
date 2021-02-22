@@ -1,6 +1,6 @@
 ---
 title: 연결리스트에서의 노드 삽입 알고리즘
-author: LEE YEONGUK
+author: abruption
 date: 2020-05-04 00:56:00 +0900
 categories: [Leature, Data Structure]
 tags: [Linked List, Data Structure]

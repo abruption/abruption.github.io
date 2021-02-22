@@ -1,6 +1,6 @@
 ---
 title: Mac에서 xcrun :error :invalid active developer path 문제 발생 시 해결 방법
-author: LEE YEONGUK
+author: abruption
 date: 2021-02-03 15:40:00 +0900
 categories: [Programming, Mac]
 tags: [xcrun, xcode, Mac]

@@ -1,6 +1,6 @@
 ---
 title: 이중 원형 연결리스트에서의 노드 삽입&삭제 알고리즘
-author: LEE YEONGUK
+author: abruption
 date: 2020-05-14 10:53:00 +0900
 categories: [Leature, Data Structure]
 tags: [Circular List, Data Structure]

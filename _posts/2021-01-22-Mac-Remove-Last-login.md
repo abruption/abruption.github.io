@@ -1,6 +1,6 @@
 ---
 title: Mac 터미널 접근 시 Last login ~ ttys000 없애기
-author: LEE YEONGUK
+author: abruption
 date: 2021-01-22 16:19:00 +0900
 categories: [Programming, Mac]
 tags: [Unix, Mac, Ubuntu]

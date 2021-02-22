@@ -1,6 +1,6 @@
 ---
 title: Mac의 기본 쉘(Shell) 변경하기 [bash → zsh]
-author: LEE YEONGUK
+author: abruption
 date: 2021-02-09 16:33:00 +0900
 categories: [Programming, Mac]
 tags: [Mac, Shell, bash, Zsh]

@@ -1,6 +1,6 @@
 ---
 title: JAVA-MySQL 연동 시 Public key retrieval is not allowed 오류 해결법
-author: LEE YEONGUK
+author: abruption
 date: 2021-01-10 23:10:00 +0900
 categories: [Programming, Java]
 tags: [Java, MySQL]

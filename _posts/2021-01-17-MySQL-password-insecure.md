@@ -1,6 +1,6 @@
 ---
 title: MySQL 쉘스크립트 작성 시 비밀번호 경고 처리하기 (Warning :Using a password on the command line interface can be insecure)
-author: LEE YEONGUK
+author: abruption
 date: 2021-01-17 21:15:00 +0900
 categories: [Programming, Ubuntu]
 tags: [Ubuntu, MySQL]

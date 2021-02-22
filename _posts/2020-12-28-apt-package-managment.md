@@ -1,6 +1,6 @@
 ---
 title: Ubuntu apt-get 업데이트 중 The following packages have been kept back 오류 해결법
-author: LEE YEONGUK
+author: abruption
 date: 2020-12-28 21:50:00 +0900
 categories: [Programming, Ubuntu]
 tags: [Ubuntu, apt, package-management]

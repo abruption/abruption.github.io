@@ -1,6 +1,6 @@
 ---
 title: Mac에서 기본 Python 기본버전 설정하기
-author: LEE YEONGUK
+author: abruption
 date: 2021-01-17 20:10:00 +0900
 categories: [Programming, Mac]
 tags: [Python, Mac]
