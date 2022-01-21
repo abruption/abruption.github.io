@@ -20,19 +20,12 @@ order: 4
 
 ## Gadget
 - Apple iPhone 11 Pro, Space Gray
-- Apple iPad Mini 5, Space Gray
+- Apple iPad Mini 6, Space Gray
 - Apple Watch Series 4, Space Gray
 - Apple Macbook Air M1 2020, Space Gray
 - Apple MacMini Late 2018, Space Gray
 - Apple AirPods Pro   
-- Apple Pencil 1st
-- Apple Magic Trackpad 2, Silver
 - Apple Magic Mouse 2
-- ~~Apple iPhone 5S, Gold~~
-- ~~Apple iPhone 7, Space Gray~~
-- ~~Apple iPhone X, Silver~~
-- ~~Apple AirPods~~
-- ~~Apple Macbook Early 2016, Rose Gold~~
 
 ## Interested
 - Starbucks
