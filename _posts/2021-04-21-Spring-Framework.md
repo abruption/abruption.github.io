@@ -2,7 +2,7 @@
 title: Spring Framework의 구조에 대해
 author: abruption
 date: 2021-04-21 14:10:00 +0900
-categories: [Lecture, Spring]
+categories: [Leature, Spring]
 tags: [Java, Spring, Framework]
 ---
 
