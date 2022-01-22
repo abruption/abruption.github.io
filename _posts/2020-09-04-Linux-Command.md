@@ -16,7 +16,11 @@ tags: [Ubuntu, Linux, Command]
     -   ls -R 옵션 (recursive) : 하위 디렉토리까지 출력한다.
     -   ls -alSrh : 다양한 조합으로 ls 명령어를 사용할 수 있다. → 숨겨진 파일(a)까지 포함해서 파일크기(S) 역순(r)으로 보기좋게(h) 자세히(l) 보여주세요.
 
+<br />
+
 -   `pwd `: 현재 위치하고 있는 디렉토리를 알려주는 명령어
+
+<br />
 
 -   `cd `: 이동할 디렉토리의 경로명 
     -   cd game : game 디렉토리로 이동한다.
@@ -28,10 +32,16 @@ tags: [Ubuntu, Linux, Command]
     -   cd ~/workspace/ : 홈 디렉토리 안에 있는 특정 디렉토리로 이동한다.
     -   cd - : 이전 디렉토리(-)로 이동한다.
 
+<br />
+
 -   `rm`
     -   rm 파일명 / rm -r 디렉토리명
 
+<br />
+
 -   `—help` : 명령어뒤에 —help를 붙이면 명령의 사용설명서가 출력됩니다. ex) ls —help / rm —help / mkdir —help / pwd —help
+
+<br />
 
 -   `cp` : 명령어를 이용하여 파일, 디렉토리를 복사합니다. 
     -   cp file1 file2 : file1 파일을 똑같이 복사하여 file2 파일을 생성한다 
@@ -40,10 +50,14 @@ tags: [Ubuntu, Linux, Command]
     -   cp -r dir1/ dir2/ : 디렉토리 전체를 복사하기 위해서는 -r 옵션을 사용한다. (recursive)
     -   cp -r dir1/ backup$(date’+\_%Y%m%d’) : cp 명령과 -r 옵션과 날짜를 이용하여 백업을 쉽게 수행할 수 있다.
 
+<br />
+
 -   `touch `: 파일을 생성하거나 갱신하는 명령어 
     -   touch \[OPTION\] filename 
         -   기존에 존재하지 않는 파일명을 지정하면 크기가 0 byte인 파일을 생성한다.
         -   이미 존재하는 파일을 Touch 하게 되면 수정시간만 현재 시간으로 변경된다
+
+<br />
 
 -   `mkdir`
     -   mkdir dir1 : 현재 디렉토리에 dir1 디렉토리를 만든다.
@@ -51,6 +65,7 @@ tags: [Ubuntu, Linux, Command]
     -   mkdir -p dir1/dir2 : 디렉토리를 만들 때 상위(부모) 디렉토리가 없으면 만든다.
     -   mkdir -m 700 dir5 : 디렉토리를 만들 때 권한까지 지정한다.
 
+<br />
 
 -   `rmdir`
     -   rmdir dir1 : 현재 디렉토리에 있는 dir1 디렉토리를 삭제한다.
@@ -58,6 +73,7 @@ tags: [Ubuntu, Linux, Command]
     -   rmdir -p dir1/dir2 : 디렉토리를 삭제할 때 상위 디렉토리로 함께 삭제한다. (다른 디렉토리나 파일이 존재할 경우 상위 디렉토리는 삭제되지 않는다.)
     -   rm -r dir1 : 파일이 들어있는 디렉토리를 삭제할 때는 rm -r 명령을 사용한다. (rmdir 명령으로는 파일이 들어있는 디렉토리를 삭제할 수 없다.)
 
+<br />
 
 -   Vi 페이지 이동명령
     -   Ctrl + F : 다음 페이지로
@@ -66,9 +82,13 @@ tags: [Ubuntu, Linux, Command]
     -   G : 파일 끝으로
     -   :숫자 : 숫자번째 문장으로 이동
 
+<br />
+
 
 -   FTP 없이 리눅스 서버로 파일을 전송하는 방법
     -   Ex) pscp \[업로드할파일경로\] \[서버접속계정\]@\[서버접속 IP\]:\[업로드 되는 서버 디렉토리 경로\] 
+
+<br />
 
 -   FTP 없이 리눅스 서버에서 원도우로 파일을 다운로드 하는 방법
     -   Ex) pscp \[서버접속계정\]@\[서버접속 IP\]:\[업로드 되는 서버 디렉토리 경로\] \[업로드할 파일경로\] 
