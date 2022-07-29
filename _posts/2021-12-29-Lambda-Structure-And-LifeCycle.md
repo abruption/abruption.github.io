@@ -6,11 +6,11 @@ categories: [Programming, AWS]
 tags: [JavaScript, Node.js, Lambda, Serverless]
 ---
 
-## Lambda의 기본 객체
-| Param | Type | Description |
-| --- | --- | --- |
-| event | <code>object</code> | [링크 가기](https://docs.aws.amazon.com/ko_kr/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-set-up-lambda-proxy-integration-on-proxy-resource) |
-| context | <code>object</code> | [링크 가기](https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/nodejs-prog-model-context.html)|
+## Lambda의 기본 객체  
+| Param | Type | Description |  
+| --- | --- | --- |  
+| event | <code>object</code> | [링크 가기](https://docs.aws.amazon.com/ko_kr/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-set-up-lambda-proxy-integration-on-proxy-resource) |  
+| context | <code>object</code> | [링크 가기](https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/nodejs-prog-model-context.html)|  
 
 <br />
 
