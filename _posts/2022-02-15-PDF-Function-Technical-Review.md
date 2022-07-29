@@ -1,12 +1,12 @@
 ---
-title: [AWS Lambda] PDF 템플릿 업로드 & 다운로드 기능 기술검토 정리
+title: AWS Lambda PDF 템플릿 업로드 & 다운로드 기능 기술검토 정리
 author: abruption
 date: 2022-02-15 11:34:00 +0900
 categories: [Programming, AWS]
 tags: [Lambda, Serverless, npm]
 ---
 
-# [AWS Lambda] PDF 템플릿 업로드 & 다운로드 기능 기술검토
+# AWS Lambda PDF 템플릿 업로드 & 다운로드 기능 기술검토 정리
 
 ## `pdf-creator-node`와 `html-pdf` 비교
 - pdf-creator-node 모듈의 Dependencies가 `html-pdf`임

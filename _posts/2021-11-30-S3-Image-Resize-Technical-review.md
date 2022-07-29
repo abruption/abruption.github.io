@@ -1,5 +1,5 @@
 ---
-title: [AWS Lambda] AWS S3 Event Notifications 기능을 이용한 이미지 리사이징 Lambda 개발 검토 정리
+title: AWS S3 Event Notifications 기능을 이용한 이미지 리사이징 Lambda 개발 검토 정리
 author: abruption
 date: 2021-11-30 10:41:00 +0900
 categories: [Programming, AWS]

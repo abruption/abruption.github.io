@@ -1,5 +1,5 @@
 ---
-title: [AWS Lambda] Lambda 구조 및 LifeCycle
+title: AWS Lambda 구조 및 LifeCycle
 author: abruption
 date: 2021-12-29 09:38:00 +0900
 categories: [Programming, AWS]

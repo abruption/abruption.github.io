@@ -1,12 +1,12 @@
 ---
-title: [AWS Lambda] PDF 템플릿 업로드 & 다운로드 기능을 위한 라이브러리 기술검토 정리
+title: AWS Lambda PDF 템플릿 업로드 & 다운로드 기능을 위한 라이브러리 기술검토 정리
 author: abruption
 date: 2022-01-06 10:24:00 +0900
 categories: [Programming, AWS]
 tags: [Lambda, Serverless, npm]
 ---
 
-# [AWS Lambda] PDF 템플릿 업로드 & 다운로드 기능을 위한 라이브러리 기술검토 
+# AWS Lambda PDF 템플릿 업로드 & 다운로드 기능을 위한 라이브러리 기술검토 정리
 
 ## `pdf2json` 모듈을 사용한 테스트 진행 
 - PDF를 바이너리에서 JSON 형식으로 구문 분석하고 변환하는 모듈로 pdf.js 기반으로 작성

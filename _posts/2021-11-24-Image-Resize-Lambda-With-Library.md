@@ -1,12 +1,12 @@
 ---
-title: [AWS Lambda] Lambda를 이용한 이미지 리사이징 방법 검토 정리
+title: AWS Lambda를 이용한 이미지 리사이징 방법 검토 정리
 author: abruption
 date: 2021-11-24 17:05:00 +0900
 categories: [Programming, AWS]
 tags: [Lambda, Serverless, Node.js, npm, Library]
 ---
 
-# [AWS Lambda] Lambda를 이용한 이미지 리사이징 방법 검토
+# AWS Lambda를 이용한 이미지 리사이징 방법 검토
 
 
 1. [Lambda@Edge](https://aws.amazon.com/ko/lambda/edge/)

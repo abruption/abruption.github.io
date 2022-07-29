@@ -1,12 +1,12 @@
 ---
-title: [Open API] 도로명주소 API 관련 정보 정리 (2022.01.04 기준)
+title: 도로명주소 관련 Open API 정보 정리 (2022.01.04 기준)
 author: abruption
 date: 2022-01-04 17:16:00 +0900
 categories: [Programming, OpenAPI]
 tags: [Kakao, Daum, OpenAPI]
 ---
 
-# [Open API] 도로명주소 API 관련 정보 정리 (2022.01.04 기준)
+# 도로명주소 관련 Open API 정보 정리 (2022.01.04 기준)
 
 ## 주소검색솔루션
 - 프로그램 설치 방식으로 Windows와 Linux OS 지원

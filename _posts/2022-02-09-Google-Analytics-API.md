@@ -1,12 +1,12 @@
 ---
-title: [Google Analytics 4 (GA4)] 기술검토 분석 및 정리
+title: Google Analytics 4 (GA4) 기술검토 분석 및 정리
 author: abruption
 date: 2022-02-09 17:45:00 +0900
 categories: [Programming, Google Analytics]
 tags: [Analytics, Google, DataStudio]
 ---
 
-# [Google Analytics 4 (GA4)] GA 관련 분석 및 정리
+# Google Analytics 4 (GA4) 기술검토 분석 및 정리
 
 ## Google Analytics 버전
 - 기존 Page 데이터 중심으로 구성되어 있는 UA(Universal Analytics)와 Event 데이터 중심으로 구성되어 있는 GA4(Google Analytics 4)가 존재

@@ -1,12 +1,12 @@
 ---
-title: [AWS Cognito] MFA 인증 방식 기술검토 경과 정리
+title: AWS Cognito MFA 인증 방식 기술검토 경과 정리
 author: abruption
 date: 2021-12-28 10:30:00 +0900
 categories: [Programming, AWS]
 tags: [Cognito, 2FA, MFA, Authentication]
 ---
 
-# [AWS Cognito] MFA 인증 방식 기술검토 경과 정리
+# AWS Cognito MFA 인증 방식 기술검토 경과 정리
 
 ## [Cognito UserPool 인증 흐름](https://docs.aws.amazon.com/ko_kr/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow.html)
 
