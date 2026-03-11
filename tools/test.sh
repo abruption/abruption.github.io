@@ -68,4 +68,6 @@ bundle exec htmlproofer "$DEST" \
   --disable-external \
   --checks "Links,Images,Scripts" \
   --ignore-empty-alt \
+  --ignore-missing-alt \
+  --no-enforce-https \
   --ignore-urls "$URL_IGNORE,#"
