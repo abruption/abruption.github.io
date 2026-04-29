@@ -9,10 +9,10 @@
 # --------------------------
 title: abruption                          # the main title
 
-tagline: Prospective developer Blog      # it will display as the sub-title
+tagline: Code · Travel · Life      # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Prospective developer Blog
+  Code · Travel · Life
 
 # fill in the base hostname & protocol for your site, e.g., 'https://username.github.io'
 url: 'https://abruption.github.io'
