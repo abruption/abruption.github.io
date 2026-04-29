@@ -12,26 +12,26 @@ order: 4
 
 
 ## History
-- 인하공업전문대학 컴퓨터정보과 (2016.03.02 ~ 2022.02.11)
-- 퀸텟시스템즈 R&D 파트 (2021.08.09 ~ )
-- 인천광역시서부교육지원청 평생교육건강과 (2017.08.13. ~ 2019.08.31.)
-- 인천광역시교육청 초등교육과 (2019.10.01. ~ 2019.12.31.)
-- 국제우편물류센터 지원과 (2021.01.15. ~ 2021.02.26.)   
+- 퀸텟시스템즈 R&D · 프로 (2021.08 ~)
+- 인하공업전문대학 컴퓨터정보과 (2016.03 ~ 2022.02)
 
 ## Gadget
-- Apple iPhone 11 Pro, Space Gray
-- Apple iPad Mini 6, Space Gray
-- Apple Watch Series 4, Space Gray
-- Apple Macbook Air M1 2020, Space Gray
-- Apple MacMini Late 2018, Space Gray
-- Apple AirPods Pro   
-- Apple Magic Mouse 2
+- Apple MacBook Pro 14" (2024), M4 Pro / 24GB / 512GB
+- Apple Mac mini, M4 / 16GB / 256GB
+- Apple iPhone 16 Pro, White / 128GB
+- Apple iPad mini 6
+- Apple Watch Ultra 1
+- Apple AirPods 4 (ANC)
+- Apple AirPods Pro 2
+- Apple HomePod mini × 2
 
 ## Interested
-- Starbucks
-- Apple
-- Card
+- Cloud-Native Architecture & AWS Serverless
+- AI / Multi-Agent Systems (LangChain, LangGraph)
+- Travel & Aviation (SIA KrisFlyer, Star Alliance)
+- Apple Ecosystem
+- Credit Card Rewards Optimization
+- Running
 
 ## Link
 - GitHub : <https://github.com/abruption>
-- Project Main Page : <https://www.abruption.ml>
