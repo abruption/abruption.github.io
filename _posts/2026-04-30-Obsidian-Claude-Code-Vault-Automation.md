@@ -1,7 +1,7 @@
 ---
 title: "Obsidian 볼트를 Claude Code로 자동화한 이야기"
 author: abruption
-date: 2026-04-30 12:00:00 +0900
+date: 2026-04-30 02:00:00 +0900
 categories: [Productivity, Obsidian]
 tags: [obsidian, claude-code, automation, sqlite, skills, rules, pkm]
 ---

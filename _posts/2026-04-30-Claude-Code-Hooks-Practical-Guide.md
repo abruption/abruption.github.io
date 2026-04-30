@@ -1,7 +1,7 @@
 ---
 title: "Claude Code Hooks로 플러그인 자동화 파이프라인 만들기"
 author: abruption
-date: 2026-04-30 11:00:00 +0900
+date: 2026-04-30 01:00:00 +0900
 categories: [Programming, Claude Code]
 tags: [claude-code, hooks, mcp, plugin, automation, jwt, authentication]
 ---
