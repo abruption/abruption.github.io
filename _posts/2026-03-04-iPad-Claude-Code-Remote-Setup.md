@@ -1,7 +1,7 @@
 ---
 title: "iPad에서 Mac Mini의 Claude Code를 원격 실행하기 — Tailscale + tmux 가이드"
 author: abruption
-date: 2026-04-29 10:00:00 +0900
+date: 2026-03-04 10:00:00 +0900
 categories: [DevOps, Remote Access]
 tags: [tailscale, ssh, tmux, claude-code, ipad, mac-mini]
 ---

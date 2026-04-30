@@ -1,7 +1,7 @@
 ---
 title: "자연어 한 줄로 소프트웨어를 만드는 6-Agent 파이프라인 설계기"
 author: abruption
-date: 2026-04-29 09:00:00 +0900
+date: 2026-04-15 09:00:00 +0900
 categories: [Programming, AI]
 tags: [multi-agent, langgraph, typescript, langchain, architecture]
 ---

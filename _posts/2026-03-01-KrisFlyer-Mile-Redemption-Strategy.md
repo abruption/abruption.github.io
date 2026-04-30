@@ -1,7 +1,7 @@
 ---
 title: "KrisFlyer 마일리지, 어디에 쓰는 게 가장 이득일까"
 author: abruption
-date: 2026-04-30 09:00:00 +0900
+date: 2026-03-01 09:00:00 +0900
 categories: [Travel, Mileage]
 tags: [krisflyer, singapore-airlines, mileage, award-ticket, scoot, travel-hack]
 ---

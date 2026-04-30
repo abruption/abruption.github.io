@@ -1,7 +1,7 @@
 ---
 title: "Claude Code로 148개 API를 자동 구현한 이야기 — AI 개발팀 3가지 모드"
 author: abruption
-date: 2026-04-30 10:00:00 +0900
+date: 2026-04-15 10:00:00 +0900
 categories: [Programming, Claude Code]
 tags: [claude-code, multi-agent, automation, tdd, development-process, team-mode]
 ---
