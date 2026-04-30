@@ -193,7 +193,7 @@ order: 4
     { name: 'China Airlines', code: 'CI', count: 2, color: '#1A237E' },
     { name: 'EVA Airways', code: 'BR', count: 2, color: '#2E7D32' },
     { name: 'China Southern', code: 'CZ', count: 2, color: '#01579B' },
-    { name: 'AirAsia', code: 'AK', count: 2, color: '#D32F2F' },
+    { name: 'AirAsia PH', code: 'Z2', count: 2, color: '#D32F2F' },
     { name: 'Parata Air', code: 'WE', count: 2, color: '#546E7A' },
     { name: 'Air Premia', code: 'YP', count: 2, color: '#4527A0' },
     { name: 'Thai Airways', code: 'TG', count: 1, color: '#6A1B9A' }
