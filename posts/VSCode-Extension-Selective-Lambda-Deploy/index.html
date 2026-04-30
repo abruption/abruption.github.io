@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="theme" content="Chirpy v2.7.1"><meta name="generator" content="Jekyll v4.4.1" /><meta property="og:title" content="VSCode Extension으로 Lambda 함수 선택적 배포 기능 만들기" /><meta name="author" content="abruption" /><meta property="og:locale" content="en_US" /><meta name="description" content="배경: 전체 배포의 불편함" /><meta property="og:description" content="배경: 전체 배포의 불편함" /><link rel="canonical" href="https://abruption.github.io/posts/VSCode-Extension-Selective-Lambda-Deploy/" /><meta property="og:url" content="https://abruption.github.io/posts/VSCode-Extension-Selective-Lambda-Deploy/" /><meta property="og:site_name" content="YEONGUK LEE" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2023-06-16T13:00:00+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="VSCode Extension으로 Lambda 함수 선택적 배포 기능 만들기" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"abruption"},"dateModified":"2023-06-16T13:00:00+09:00","datePublished":"2023-06-16T13:00:00+09:00","description":"배경: 전체 배포의 불편함","headline":"VSCode Extension으로 Lambda 함수 선택적 배포 기능 만들기","mainEntityOfPage":{"@type":"WebPage","@id":"https://abruption.github.io/posts/VSCode-Extension-Selective-Lambda-Deploy/"},"url":"https://abruption.github.io/posts/VSCode-Extension-Selective-Lambda-Deploy/"}</script><title>VSCode Extension으로 Lambda 함수 선택적 배포 기능 만들기 | YEONGUK LEE</title><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="icon" href="/assets/img/favicons/favicon.ico" type="image/x-icon"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon.png"><link rel="apple-touch-icon" href="/assets/img/favicons/apple-icon-precomposed.png"><link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicons/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicons/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/manifest.json"><meta name='msapplication-config' content='/assets/img/favicons/browserconfig.xml'><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="preconnect" href="cdn.jsdelivr.net"><link rel="dns-prefetch" href="cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha256-LA89z+k9fjgMKQ/kq4OO2Mrf8VltYml/VES+Rg0fh20=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"><link rel="preload" href="/assets/css/post.css" as="style"><link rel="stylesheet" href="/assets/css/post.css"><link rel="preload" as="style" href="/assets/css/lib/bootstrap-toc.min.css"><link rel="stylesheet" href="/assets/css/lib/bootstrap-toc.min.css" /> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script data-ad-client="ca-pub-6751927075691636" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <script defer src="https://cdn.jsdelivr.net/combine/npm/popper.js@1.15.0,npm/bootstrap@4/dist/js/bootstrap.min.js"></script> <script async src="/assets/js/post.min.js"></script> <script defer src="/app.js"></script> <script async src="https://www.googletagmanager.com/gtag/js?id="></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', ''); </script><body data-spy="scroll" data-target="#toc"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" alt="avatar" class="mx-auto"> <img src="/assets/img/sample/profile.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">YEONGUK LEE</a></div><div class="site-subtitle font-italic">Code · Travel · Life</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/tabs/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tabs/tags/" class="nav-link"> <i class="fa-fw fas fa-tags ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/tabs/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/tabs/travels/" class="nav-link"> <i class="fa-fw fas fa-plane ml-xl-3 mr-xl-3 unloaded"></i> <span>TRAVELS</span> </a><li class="nav-item"> <a href="/tabs/about/" class="nav-link"> <i class="fa-fw fas fa-info ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center"> <a href="https://github.com/abruption" aria-label="github" class="order-3" target="_blank" rel="noopener"> <i class="fab fa-github-alt"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['hashcode','kakao.com'].join('@')" aria-label="email" class="order-4" > <i class="fas fa-envelope"></i> </a> <span class="icon-border order-2"></span> <span id="mode-toggle-wrapper" class="order-1"> <i class="mode-toggle fas fa-adjust"></i> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } var self = this; /* always follow the system prefers */ this.sysDarkPrefers.addListener(function() { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.updateMermaid(); }); } /* constructor() */ setDark() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_KEY); sessionStorage.removeItem(ModeToggle.MODE_KEY); } get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode == ModeToggle.DARK_MODE; } get isLightMode() { return this.mode == ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer) ) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } updateMermaid() { if (typeof mermaid !== "undefined") { let expectedTheme = (this.modeStatus === ModeToggle.DARK_MODE? "dark" : "default"); let config = { theme: expectedTheme }; /* re-render the SVG › <https://github.com/mermaid-js/mermaid/issues/311#issuecomment-332557344> */ $(".mermaid").each(function() { let svgCode = $(this).prev().children().html(); $(this).removeAttr("data-processed"); $(this).html(svgCode); }); mermaid.initialize(config); mermaid.init(undefined, ".mermaid"); } } flipMode() { if (this.hasMode) { if (this.isSysDarkPrefer) { if (this.isLightMode) { this.clearMode(); } else { this.setLight(); } } else { if (this.isDarkMode) { this.clearMode(); } else { this.setDark(); } } } else { if (this.isSysDarkPrefer) { this.setLight(); } else { this.setDark(); } } this.updateMermaid(); } /* flipMode() */ } /* ModeToggle */ let toggle = new ModeToggle(); $(".mode-toggle").click(function() { toggle.flipMode(); }); </script> </span></div></div><div id="topbar-wrapper" class="row justify-content-center topbar-down"><div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between"> <span id="breadcrumb"> <span> <a href="/"> Posts </a> </span> <span>VSCode Extension으로 Lambda 함수 선택적 배포 기능 만들기</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" placeholder="Search..."> <i class="fa fa-times-circle fa-fw" id="search-cleaner"></i> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper"><div id="main"><div class="row"><div id="post-wrapper" class="col-12 col-lg-11 col-xl-8"><div class="post pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><h1 data-toc-skip>VSCode Extension으로 Lambda 함수 선택적 배포 기능 만들기</h1><div class="post-meta text-muted d-flex flex-column"><div> <span class="timeago " data-toggle="tooltip" data-placement="bottom" title="Fri, Jun 16, 2023, 1:00 PM +0900" > Jun 16, 2023 <i class="unloaded">2023-06-16T13:00:00+09:00</i> </span> by <span class="author"> abruption </span></div><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="2985 words">16 min</span></div></div><div class="post-content"><h2 id="배경-전체-배포의-불편함">배경: 전체 배포의 불편함</h2><p>사내 로우코드 플랫폼의 배포 도구를 운영하다 보면, 서버 사이드 스크립트를 배포할 때 <strong>전체 메서드를 일괄 배포</strong>해야 하는 상황이 자주 발생한다. Pre/Post 훅 스크립트에 Select, Save, Delete 같은 여러 Operation이 있는데, 하나만 수정했어도 전부 다시 배포해야 했다.</p><p>이런 방식은 몇 가지 문제를 만든다.</p><ul><li><strong>불필요한 배포 범위</strong>: 변경하지 않은 메서드까지 재배포되어 사이드 이펙트 우려<li><strong>배포 시간 증가</strong>: 전체 스크립트를 처리하므로 Lambda 실행 시간이 길어짐<li><strong>운영 리스크</strong>: 의도하지 않은 메서드가 덮어씌워질 가능성</ul><p>이 글에서는 VSCode Extension에서 <strong>배포할 메서드를 선택적으로 고를 수 있는 UI</strong>를 만들고, Lambda 함수에서 선택된 메서드만 처리하도록 구현한 과정을 정리한다.</p><hr /><h2 id="아키텍처-개요">아키텍처 개요</h2><p>전체 흐름은 크게 세 단계로 나뉜다.</p><div class="language-plaintext highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre>VSCode Extension (QuickPick UI)
+        │
+        ▼  선택된 메서드 목록 전달
+  Lambda Function (배포 처리)
+        │
+        ▼  선택된 메서드만 DB에 기록
+  Runtime (스크립트 실행 시 등록된 메서드만 수행)
+</pre></table></code></div></div><h3 id="배포-가능한-메서드-단위">배포 가능한 메서드 단위</h3><div class="table-wrapper"><table><thead><tr><th>Script 타입<th>Operation<tbody><tr><td>PreScript<td>Select, Save, Delete<tr><td>PostScript<td>Select, Save, Delete</table></div><p>총 6개의 메서드를 개별적으로 선택/해제할 수 있다.</p><hr /><h2 id="vscode-extension-ui-구현">VSCode Extension UI 구현</h2><h3 id="quickpick으로-멀티-선택-ui-만들기">QuickPick으로 멀티 선택 UI 만들기</h3><p>VSCode Extension API의 <code class="language-plaintext highlighter-rouge">window.showQuickPick</code>은 <code class="language-plaintext highlighter-rouge">canPickMany: true</code> 옵션으로 체크박스 형태의 멀티 선택 UI를 제공한다. 이를 활용하면 배포할 메서드를 직관적으로 고를 수 있다.</p><div class="language-typescript highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">deployOptions</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="dl">'</span><span class="s1">PreScript-Select</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">PreScript-Save</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">PreScript-Delete</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">PostScript-Select</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">PostScript-Save</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">PostScript-Delete</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">];</span>
+
+<span class="kd">const</span> <span class="nx">selected</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">vscode</span><span class="p">.</span><span class="nb">window</span><span class="p">.</span><span class="nf">showQuickPick</span><span class="p">(</span><span class="nx">deployOptions</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">canPickMany</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">placeHolder</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Please select deploy method</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">selected</span> <span class="o">||</span> <span class="nx">selected</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">vscode</span><span class="p">.</span><span class="nb">window</span><span class="p">.</span><span class="nf">showErrorMessage</span><span class="p">(</span><span class="dl">'</span><span class="s1">배포할 메서드를 하나 이상 선택해주세요.</span><span class="dl">'</span><span class="p">);</span>
+  <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>여기서 핵심은 <code class="language-plaintext highlighter-rouge">canPickMany: true</code>다. 이 옵션 하나로 단일 선택 드롭다운이 체크박스 리스트로 바뀐다.</p><h3 id="프로젝트-타입에-따른-분기">프로젝트 타입에 따른 분기</h3><p>모든 배포 대상이 메서드 선택이 필요한 것은 아니다. 서버 스크립트 프로젝트일 때만 QuickPick을 띄우고, 그 외에는 기존의 커밋 메시지 입력 방식을 유지했다.</p><div class="language-typescript highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">deployInput</span><span class="p">:</span> <span class="kr">string</span><span class="p">[]</span> <span class="o">|</span> <span class="kr">string</span> <span class="o">|</span> <span class="kc">undefined</span><span class="p">;</span>
+
+<span class="k">switch </span><span class="p">(</span><span class="nx">item</span><span class="p">.</span><span class="kd">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="dl">'</span><span class="s1">SERVER_SCRIPT_PROJECT</span><span class="dl">'</span><span class="p">:</span>
+    <span class="nx">deployInput</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">vscode</span><span class="p">.</span><span class="nb">window</span><span class="p">.</span><span class="nf">showQuickPick</span><span class="p">(</span><span class="nx">deployOptions</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">canPickMany</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="na">placeHolder</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Please select deploy method</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="nl">default</span><span class="p">:</span>
+    <span class="nx">deployInput</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">vscode</span><span class="p">.</span><span class="nb">window</span><span class="p">.</span><span class="nf">showInputBox</span><span class="p">({</span>
+      <span class="na">placeHolder</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Please input deploy message</span><span class="dl">'</span><span class="p">,</span>
+    <span class="p">});</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h3 id="이전-배포-상태-자동-복원">이전 배포 상태 자동 복원</h3><p>사용자 경험을 위해 한 가지 더 고려한 점이 있다. <strong>이전에 배포한 메서드를 QuickPick에서 자동으로 체크된 상태로 표시</strong>하는 것이다.</p><p>Lambda에 이전 배포 항목을 조회하는 API를 추가하고, 응답을 QuickPick의 <code class="language-plaintext highlighter-rouge">picked</code> 속성에 매핑했다.</p><div class="language-typescript highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="c1">// 이전 배포 항목 조회</span>
+<span class="kd">const</span> <span class="nx">prevItems</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">lambdaProvider</span><span class="p">.</span><span class="nf">getPrevDeployItems</span><span class="p">(</span><span class="nx">objectId</span><span class="p">);</span>
+<span class="c1">// 예: [{ item: "PreScript-Select" }, { item: "PreScript-Save" }]</span>
+
+<span class="kd">const</span> <span class="nx">quickPickItems</span><span class="p">:</span> <span class="nx">vscode</span><span class="p">.</span><span class="nx">QuickPickItem</span><span class="p">[]</span> <span class="o">=</span> <span class="nx">deployOptions</span><span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="nx">option</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+  <span class="na">label</span><span class="p">:</span> <span class="nx">option</span><span class="p">,</span>
+  <span class="na">picked</span><span class="p">:</span> <span class="nx">prevItems</span><span class="p">.</span><span class="nf">some</span><span class="p">((</span><span class="nx">prev</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">prev</span><span class="p">.</span><span class="nx">item</span> <span class="o">===</span> <span class="nx">option</span><span class="p">),</span>
+<span class="p">}));</span>
+
+<span class="kd">const</span> <span class="nx">selected</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">vscode</span><span class="p">.</span><span class="nb">window</span><span class="p">.</span><span class="nf">showQuickPick</span><span class="p">(</span><span class="nx">quickPickItems</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">canPickMany</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="na">placeHolder</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Please select deploy method</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">});</span>
+</pre></table></code></div></div><p>이렇게 하면 처음 배포하는 프로젝트는 전체 선택 상태, 기존에 일부만 배포했던 프로젝트는 해당 메서드만 체크된 상태로 표시된다.</p><hr /><h2 id="lambda-호출-선택-정보-전달">Lambda 호출: 선택 정보 전달</h2><p>Extension에서 선택된 메서드 목록을 Lambda에 전달할 때는 기존 배포 파라미터에 <code class="language-plaintext highlighter-rouge">deployMethod</code> 필드를 추가했다.</p><div class="language-typescript highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+</pre><td class="rouge-code"><pre><span class="kr">interface</span> <span class="nx">DeployMethodItem</span> <span class="p">{</span>
+  <span class="nl">label</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>       <span class="c1">// e.g. "preSelect"</span>
+  <span class="nl">description</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span> <span class="c1">// e.g. "PreScript-Select"</span>
+  <span class="nl">picked</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nf">deploy</span><span class="p">(</span>
+  <span class="nx">objectId</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+  <span class="nx">objectName</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+  <span class="nx">applicationId</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+  <span class="nx">sdkVersion</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+  <span class="nx">deployMethod</span><span class="p">?:</span> <span class="nx">DeployMethodItem</span><span class="p">[]</span>
+<span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">boolean</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">funcName</span><span class="p">:</span> <span class="dl">'</span><span class="s1">deploy</span><span class="dl">'</span><span class="p">,</span>
+    <span class="nx">objectId</span><span class="p">,</span>
+    <span class="nx">objectName</span><span class="p">,</span>
+    <span class="nx">applicationId</span><span class="p">,</span>
+    <span class="na">version</span><span class="p">:</span> <span class="nx">sdkVersion</span><span class="p">,</span>
+    <span class="nx">deployMethod</span><span class="p">,</span>   <span class="c1">// 선택된 메서드 배열</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">callLambda</span><span class="p">(</span><span class="dl">'</span><span class="s1">DeployServiceLambda</span><span class="dl">'</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">stringify</span><span class="p">(</span><span class="nx">payload</span><span class="p">));</span>
+  <span class="k">return</span> <span class="nx">response</span><span class="p">.</span><span class="nx">success</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p><code class="language-plaintext highlighter-rouge">deployMethod</code>가 <code class="language-plaintext highlighter-rouge">undefined</code>이면 기존 전체 배포와 동일하게 동작하도록 하위 호환성을 유지했다.</p><hr /><h2 id="lambda-측-처리-로직">Lambda 측 처리 로직</h2><p>Lambda에서는 수신한 <code class="language-plaintext highlighter-rouge">deployMethod</code>를 기반으로 DB에 메서드 단위 레코드를 관리한다.</p><h3 id="신규-스크립트-배포">신규 스크립트 배포</h3><p>처음 배포하는 스크립트라면 스크립트 마스터 레코드와 함께 선택된 메서드 아이템을 INSERT한다.</p><div class="language-typescript highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="c1">// 의사코드</span>
+<span class="k">if </span><span class="p">(</span><span class="nx">existingScript</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 스크립트 마스터 레코드 생성</span>
+  <span class="k">await</span> <span class="nx">dao</span><span class="p">.</span><span class="nf">insertServerScript</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+  <span class="c1">// 선택된 메서드별 아이템 레코드 생성</span>
+  <span class="k">await</span> <span class="nx">dao</span><span class="p">.</span><span class="nf">insertScriptMethodItem</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h3 id="기존-스크립트-재배포">기존 스크립트 재배포</h3><p>이미 배포된 스크립트라면, 수정본(X 테이블) 존재 여부에 따라 INSERT 또는 UPDATE를 분기한다.</p><div class="language-typescript highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="c1">// 의사코드</span>
+<span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">existingDraft</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 수정본이 없으면 새로 생성</span>
+  <span class="k">await</span> <span class="nx">dao</span><span class="p">.</span><span class="nf">insertServerScriptDraft</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">dao</span><span class="p">.</span><span class="nf">insertScriptMethodItemDraft</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// 수정본이 있으면 업데이트</span>
+  <span class="k">await</span> <span class="nx">dao</span><span class="p">.</span><span class="nf">updateServerScriptDraft</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">dao</span><span class="p">.</span><span class="nf">updateScriptMethodItemDraft</span><span class="p">(</span><span class="nx">params</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></table></code></div></div><h3 id="이전-배포-항목-조회-api">이전 배포 항목 조회 API</h3><p>Extension의 QuickPick에 자동 선택 상태를 제공하기 위한 조회 서비스도 추가했다.</p><div class="language-typescript highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="k">async</span> <span class="kd">function</span> <span class="nf">getPrevDeployItems</span><span class="p">(</span><span class="nx">objectId</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">accountId</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">items</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">dao</span><span class="p">.</span><span class="nf">selectPrevDeployItems</span><span class="p">({</span>
+    <span class="nx">objectId</span><span class="p">,</span>
+    <span class="nx">accountId</span><span class="p">,</span>
+  <span class="p">});</span>
+  <span class="c1">// 응답: [{ item: "PreScript-Select" }, { item: "PreScript-Save" }]</span>
+  <span class="k">return</span> <span class="nx">items</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></table></code></div></div><hr /><h2 id="테이블-설계">테이블 설계</h2><p>메서드 단위 배포를 지원하려면 기존 스크립트 테이블과 1:N 관계인 <strong>메서드 아이템 테이블</strong>이 필요하다.</p><h3 id="erd">ERD</h3><pre><code class="language-mermaid">erDiagram
+    deploy_script ||--o{ script_method_item : "has methods"
+    deploy_script {
+        varchar(32) id PK
+        varchar(32) app_id FK "애플리케이션"
+        varchar(32) object_id FK "비즈니스 오브젝트"
+        varchar(32) tenant_app_id "테넌트 앱"
+        varchar(32) tenant_account_id "테넌트 계정"
+        varchar(100) script_name "스크립트명"
+        varchar(32) script_type "스크립트 유형"
+        char(1) is_active "활성 플래그"
+        char(1) deploy_flag "배포 여부"
+        varchar(100) version "배포 버전"
+        varchar(10) operation_version "오퍼레이션 버전"
+        varchar(50) lock_profile "잠금 프로필"
+        varchar(50) stack_profile "스택 프로필"
+        varchar(50) delete_profile "삭제 프로필"
+    }
+    script_method_item {
+        varchar(32) id PK
+        varchar(32) script_id FK "상위 스크립트"
+        varchar(32) tenant_app_id "테넌트 앱"
+        varchar(32) tenant_account_id "테넌트 계정"
+        varchar(10) operation_type "오퍼레이션 타입"
+        char(1) is_active "활성 플래그"
+    }
+</code></pre><h3 id="deploy_script-서버-스크립트-마스터">deploy_script (서버 스크립트 마스터)</h3><p>스크립트 단위의 메타정보와 배포 상태를 관리한다.</p><div class="language-sql highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre><td class="rouge-code"><pre><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">deploy_script</span> <span class="p">(</span>
+  <span class="n">id</span>               <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+  <span class="n">app_id</span>           <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'애플리케이션 ID'</span><span class="p">,</span>
+  <span class="n">object_id</span>        <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'비즈니스 오브젝트 ID'</span><span class="p">,</span>
+  <span class="n">tenant_app_id</span>    <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'테넌트 앱 ID'</span><span class="p">,</span>
+  <span class="n">tenant_account_id</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'테넌트 계정 ID'</span><span class="p">,</span>
+  <span class="n">is_active</span>        <span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>      <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'활성 플래그'</span><span class="p">,</span>
+  <span class="n">script_name</span>      <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'스크립트 이름'</span><span class="p">,</span>
+  <span class="n">script_type</span>      <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'스크립트 유형'</span><span class="p">,</span>
+  <span class="n">lock_profile</span>     <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'잠금 프로필 (편집 잠금)'</span><span class="p">,</span>
+  <span class="n">deploy_flag</span>      <span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>      <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'배포 여부'</span><span class="p">,</span>
+  <span class="k">version</span>          <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'배포 버전'</span><span class="p">,</span>
+  <span class="n">operation_version</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'오퍼레이션 버전'</span><span class="p">,</span>
+  <span class="n">stack_profile</span>    <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'스택 프로필'</span><span class="p">,</span>
+  <span class="n">delete_profile</span>   <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'삭제 프로필'</span><span class="p">,</span>
+  <span class="n">created_by</span>       <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">modified_by</span>      <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">created_at</span>       <span class="nb">DATETIME</span>     <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">updated_at</span>       <span class="nb">DATETIME</span>     <span class="k">DEFAULT</span> <span class="k">NULL</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb3</span><span class="p">;</span>
+</pre></table></code></div></div><div class="table-wrapper"><table><thead><tr><th>주요 컬럼<th>설명<tbody><tr><td><code class="language-plaintext highlighter-rouge">object_id</code><td>배포 대상 비즈니스 오브젝트 식별자<tr><td><code class="language-plaintext highlighter-rouge">tenant_app_id</code> / <code class="language-plaintext highlighter-rouge">tenant_account_id</code><td>멀티테넌트 환경에서 앱·계정 식별<tr><td><code class="language-plaintext highlighter-rouge">lock_profile</code><td>다른 개발자의 동시 편집을 방지하는 잠금 프로필<tr><td><code class="language-plaintext highlighter-rouge">deploy_flag</code><td>배포 완료 여부 (<code class="language-plaintext highlighter-rouge">Y</code>/<code class="language-plaintext highlighter-rouge">N</code>)<tr><td><code class="language-plaintext highlighter-rouge">version</code><td>배포 시점의 버전 문자열</table></div><h3 id="script_method_item-메서드-단위-배포-아이템">script_method_item (메서드 단위 배포 아이템)</h3><p>상위 스크립트에 속하는 개별 메서드(Pre/PostScript × Select/Save/Delete)의 배포 선택 정보를 저장한다.</p><div class="language-sql highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">script_method_item</span> <span class="p">(</span>
+  <span class="n">id</span>               <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+  <span class="n">script_id</span>        <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'상위 스크립트 FK'</span><span class="p">,</span>
+  <span class="n">tenant_app_id</span>    <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'테넌트 앱 ID'</span><span class="p">,</span>
+  <span class="n">tenant_account_id</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'테넌트 계정 ID'</span><span class="p">,</span>
+  <span class="n">operation_type</span>   <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'오퍼레이션 타입'</span><span class="p">,</span>
+  <span class="n">is_active</span>        <span class="nb">CHAR</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>      <span class="k">DEFAULT</span> <span class="k">NULL</span> <span class="k">COMMENT</span> <span class="s1">'활성 플래그'</span><span class="p">,</span>
+  <span class="n">created_by</span>       <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">modified_by</span>      <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span>  <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">created_at</span>       <span class="nb">DATETIME</span>     <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="n">updated_at</span>       <span class="nb">DATETIME</span>     <span class="k">DEFAULT</span> <span class="k">NULL</span><span class="p">,</span>
+  <span class="k">KEY</span> <span class="n">idx_tenant</span>   <span class="p">(</span><span class="n">tenant_account_id</span><span class="p">,</span> <span class="n">tenant_app_id</span><span class="p">),</span>
+  <span class="k">KEY</span> <span class="n">idx_script</span>   <span class="p">(</span><span class="n">script_id</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+</pre></table></code></div></div><div class="table-wrapper"><table><thead><tr><th>주요 컬럼<th>설명<tbody><tr><td><code class="language-plaintext highlighter-rouge">script_id</code><td>상위 <code class="language-plaintext highlighter-rouge">deploy_script</code> 테이블의 FK<tr><td><code class="language-plaintext highlighter-rouge">tenant_app_id</code> / <code class="language-plaintext highlighter-rouge">tenant_account_id</code><td>멀티테넌트 식별 (복합 인덱스)<tr><td><code class="language-plaintext highlighter-rouge">operation_type</code><td><code class="language-plaintext highlighter-rouge">preSave</code>, <code class="language-plaintext highlighter-rouge">preSelect</code>, <code class="language-plaintext highlighter-rouge">preDelete</code>, <code class="language-plaintext highlighter-rouge">postSave</code>, <code class="language-plaintext highlighter-rouge">postSelect</code>, <code class="language-plaintext highlighter-rouge">postDelete</code> 중 하나<tr><td><code class="language-plaintext highlighter-rouge">is_active</code><td>소프트 삭제 플래그</table></div><h3 id="버전-관리-테이블">버전 관리 테이블</h3><p>운영 환경에서는 배포 버전 관리를 위해 <strong>수정본(Draft) 테이블</strong>을 별도로 운영한다. <code class="language-plaintext highlighter-rouge">deploy_script</code>와 <code class="language-plaintext highlighter-rouge">script_method_item</code> 각각에 대응하는 Draft 테이블(<code class="language-plaintext highlighter-rouge">_x</code> suffix)이 존재하며, 원본과 동일한 구조에 버전 관련 컬럼이 추가된 형태다.</p><div class="table-wrapper"><table><thead><tr><th>추가 컬럼<th>설명<tbody><tr><td><code class="language-plaintext highlighter-rouge">deploy_status</code><td>배포 상태 (draft, published 등)<tr><td><code class="language-plaintext highlighter-rouge">deploy_version</code><td>배포 버전 문자열<tr><td><code class="language-plaintext highlighter-rouge">master_flag</code><td>마스터 레코드 여부<tr><td><code class="language-plaintext highlighter-rouge">prev_version</code><td>이전 버전 번호<tr><td><code class="language-plaintext highlighter-rouge">pub_version</code><td>게시 버전 번호</table></div><p>이 구조 덕분에 배포 이력 추적과 롤백이 가능하다.</p><hr /><h2 id="런타임-실행-로직">런타임 실행 로직</h2><p>배포가 완료된 후 실제 스크립트가 실행될 때는 <code class="language-plaintext highlighter-rouge">script_method_item</code> 테이블을 조회하여 <strong>등록된 메서드만 실행</strong>한다.</p><div class="language-typescript highlighter-rouge"><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="c1">// 의사코드: 런타임에서 스크립트 실행 시</span>
+<span class="kd">const</span> <span class="nx">registeredMethods</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">getScriptMethodItems</span><span class="p">(</span><span class="nx">scriptId</span><span class="p">);</span>
+
+<span class="k">if </span><span class="p">(</span><span class="nx">registeredMethods</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// 아이템이 없으면 전체 Pre/PostScript 실행 (하위 호환)</span>
+  <span class="k">await</span> <span class="nf">executeAllMethods</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// 등록된 메서드만 필터링하여 실행</span>
+  <span class="kd">const</span> <span class="nx">currentOperation</span> <span class="o">=</span> <span class="nf">getCurrentOperation</span><span class="p">();</span> <span class="c1">// e.g. "preSave"</span>
+  <span class="k">if </span><span class="p">(</span><span class="nx">registeredMethods</span><span class="p">.</span><span class="nf">includes</span><span class="p">(</span><span class="nx">currentOperation</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">await</span> <span class="nf">executeMethod</span><span class="p">(</span><span class="nx">script</span><span class="p">,</span> <span class="nx">currentOperation</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// 미등록 메서드는 스킵</span>
+<span class="p">}</span>
+</pre></table></code></div></div><p>이 로직의 핵심은 <strong>하위 호환성</strong>이다. 메서드 아이템이 하나도 없으면 기존처럼 전체 스크립트를 실행하므로, 기능 도입 전에 배포된 스크립트에는 영향이 없다.</p><hr /><h2 id="테스트-전략">테스트 전략</h2><h3 id="extension-테스트">Extension 테스트</h3><div class="table-wrapper"><table><thead><tr><th>시나리오<th>기대 결과<tbody><tr><td>기존 배포 아이템 없음<td>전체 6개 메서드 선택 상태로 표시<tr><td>기존 배포 아이템 존재<td>해당 메서드만 자동 선택(picked)<tr><td>선택 없이 확인 클릭<td>에러 메시지 표시, 배포 중단</table></div><h3 id="lambda-테스트">Lambda 테스트</h3><div class="table-wrapper"><table><thead><tr><th>시나리오<th>기대 결과<tbody><tr><td>신규 스크립트 배포<td>마스터 + 메서드 아이템 INSERT<tr><td>스크립트 삭제<td>메서드 아이템까지 전체 삭제<tr><td>체크인(재배포)<td>선택 메서드 아이템 갱신</table></div><h3 id="런타임-테스트">런타임 테스트</h3><div class="table-wrapper"><table><thead><tr><th>시나리오<th>기대 결과<tbody><tr><td>메서드 아이템 미존재<td>기존 로직 동일 수행 (전체 실행)<tr><td>아이템 존재 + 매칭<td>해당 스크립트만 수행<tr><td>아이템 존재 + 불일치<td>스크립트 미수행</table></div><hr /><h2 id="마무리">마무리</h2><p>이 기능을 도입한 후 체감되는 변화는 다음과 같다.</p><ul><li><strong>배포 범위 최소화</strong>: 변경한 메서드만 골라서 배포하니 사이드 이펙트 걱정이 줄었다<li><strong>배포 속도 개선</strong>: 불필요한 메서드 처리가 빠지면서 Lambda 실행 시간이 단축되었다<li><strong>이전 상태 복원</strong>: QuickPick에서 이전 배포 상태를 자동으로 보여주니 실수로 빠뜨리는 일이 없다</ul><p>VSCode Extension API의 <code class="language-plaintext highlighter-rouge">showQuickPick</code>은 간단하지만 강력하다. <code class="language-plaintext highlighter-rouge">canPickMany</code>, <code class="language-plaintext highlighter-rouge">picked</code> 같은 옵션만으로도 꽤 실용적인 선택 UI를 만들 수 있다. Lambda와 조합하면 서버리스 환경에서도 세밀한 배포 제어가 가능하다.</p><hr /><h2 id="참고-링크">참고 링크</h2><ul><li><a href="https://code.visualstudio.com/api/references/vscode-api#window.showQuickPick" target="_blank">VSCode Extension API - QuickPick</a><li><a href="https://code.visualstudio.com/api/references/vscode-api#QuickPickItem" target="_blank">VSCode Extension API - QuickPickItem</a><li><a href="https://code.visualstudio.com/api/references/vscode-api#window.withProgress" target="_blank">VSCode Extension API - withProgress</a><li><a href="https://docs.aws.amazon.com/lambda/latest/api/API_Invoke.html" target="_blank">AWS Lambda - Invoke</a><li><a href="https://code.visualstudio.com/api/get-started/your-first-extension" target="_blank">Your First Extension - VSCode Docs</a></ul></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/devtools/'>DevTools</a>, <a href='/categories/vscode/'>VSCode</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/vscode-extension/" class="post-tag no-text-decoration" >vscode-extension</a> <a href="/tags/lambda/" class="post-tag no-text-decoration" >lambda</a> <a href="/tags/deploy/" class="post-tag no-text-decoration" >deploy</a> <a href="/tags/serverless/" class="post-tag no-text-decoration" >serverless</a> <a href="/tags/typescript/" class="post-tag no-text-decoration" >typescript</a> <a href="/tags/developer-tools/" class="post-tag no-text-decoration" >developer-tools</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=VSCode Extension으로 Lambda 함수 선택적 배포 기능 만들기 - YEONGUK LEE&url=https://abruption.github.io/posts/VSCode-Extension-Selective-Lambda-Deploy/" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=VSCode Extension으로 Lambda 함수 선택적 배포 기능 만들기 - YEONGUK LEE&u=https://abruption.github.io/posts/VSCode-Extension-Selective-Lambda-Deploy/" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://telegram.me/share?text=VSCode Extension으로 Lambda 함수 선택적 배포 기능 만들기 - YEONGUK LEE&url=https://abruption.github.io/posts/VSCode-Extension-Selective-Lambda-Deploy/" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i class="fa-fw fas fa-link small" onclick="copyLink()" data-toggle="tooltip" data-placement="top" title="Copy link"></i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted topbar-down"><div class="access"><div id="access-lastmod" class="post"> <span>Recent Update</span><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/CLI-Auth-Without-Secret-Key/">Secret Key 없이 CLI 인증 만들기 — Clerk + Loopback 서버 패턴</a><li><a href="/posts/Claude-Code-Hooks-Practical-Guide/">Claude Code Hooks로 플러그인 자동화 파이프라인 만들기</a><li><a href="/posts/Lambda-Structure-And-LifeCycle/">AWS Lambda 구조 및 LifeCycle</a><li><a href="/posts/Image-Resize-Lambda-With-Library/">AWS Lambda를 이용한 이미지 리사이징 방법 검토 정리</a><li><a href="/posts/S3-Image-Resize-Technical-review/">AWS S3 Event Notifications 기능을 이용한 이미지 리사이징 Lambda 개발 검토 정리</a></ul></div><div id="access-tags"> <span>Trending Tags</span><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/data-structure/">Data Structure</a> <a class="post-tag" href="/tags/mac/">Mac</a> <a class="post-tag" href="/tags/lambda/">Lambda</a> <a class="post-tag" href="/tags/serverless/">Serverless</a> <a class="post-tag" href="/tags/ubuntu/">Ubuntu</a> <a class="post-tag" href="/tags/npm/">npm</a> <a class="post-tag" href="/tags/claude-code/">claude-code</a> <a class="post-tag" href="/tags/node-js/">Node.js</a> <a class="post-tag" href="/tags/apple/">Apple</a> <a class="post-tag" href="/tags/automation/">automation</a></div></div></div><div id="toc-wrapper" class="pl-0 pr-4 mb-5"> <span class="pl-3 pt-2 mb-2">Contents</span><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div class="col-12 col-lg-11 col-xl-8"><div id="post-extend-wrapper" class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-md-4 pr-md-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/Semver-Based-Mobile-App-Force-Update/"><div class="card-body"> <span class="timeago small" > Apr 5, 2023 <i class="unloaded">2023-04-05T12:00:00+09:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Semver 기반 모바일 앱 강제 업데이트 구현 — Major/Minor/Patch 전략</h3><div class="text-muted small"><p> 왜 강제 업데이트가 필요한가 모바일 앱을 운영하다 보면 “이 버전은 더 이상 쓰면 안 된다”는 상황이 반드시 온다. 인증 방식 변경, 주요 API 스펙 변경, 보안 취약점 패치 같은 경우다. 스토어 리뷰를 기다리는 동안 구버전 사용자가 장애를 겪는 건 피할 수 없지만, 최소한 신버전이 배포된 후에는 빠르게 유도할 수 있어야 한다. 나는 B2B Sa...</p></div></div></a></div><div class="card"> <a href="/posts/Event-Driven-Service-Orchestration-With-Step-Functions/"><div class="card-body"> <span class="timeago small" > Jul 13, 2023 <i class="unloaded">2023-07-13T11:00:00+09:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>AWS Step Functions로 이벤트 기반 Service Orchestration 구축하기</h3><div class="text-muted small"><p> 들어가며 엔터프라이즈 플랫폼을 운영하다 보면 CRUD 처리 이후 후행 작업을 자동으로 실행해야 하는 상황이 빈번하게 발생한다. 예를 들어 사용자가 주문 데이터를 저장하면 재고 차감, 알림 발송, 통계 집계 등 여러 후속 프로세스가 연쇄적으로 돌아가야 한다. 이 글에서는 AWS Step Functions를 활용하여 이벤트 기반 Service Orch...</p></div></div></a></div><div class="card"> <a href="/posts/Multi-Agent-Pipeline-Architecture/"><div class="card-body"> <span class="timeago small" > Apr 15 <i class="unloaded">2026-04-15T09:00:00+09:00</i> </span><h3 class="pt-0 mt-1 mb-3" data-toc-skip>자연어 한 줄로 소프트웨어를 만드는 6-Agent 파이프라인 설계기</h3><div class="text-muted small"><p> “주문 관리 시스템을 만들어줘.” 이 한 줄을 넣으면 요구사항 정의서, ERD, 백엔드 명세, 프론트엔드 컴포넌트 명세가 쏟아져 나오는 시스템을 만들었다. 6개의 에이전트가 릴레이처럼 산출물을 넘기면서 동작하는 구조인데, 만드는 과정에서 생각보다 많은 삽질이 있었다. 1 2 3 4 5 6 7 8 9 10 11 12 13 사용자 자연어 입력 ...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/Semver-Based-Mobile-App-Force-Update/" class="btn btn-outline-primary"><p>Semver 기반 모바일 앱 강제 업데이트 구현 — Major/Minor/Patch 전략</p></a> <a href="/posts/Event-Driven-Service-Orchestration-With-Step-Functions/" class="btn btn-outline-primary"><p>AWS Step Functions로 이벤트 기반 Service Orchestration 구축하기</p></a></div><div id="disqus" class="pt-2 pb-2"><p class="font-italic text-center text-muted small"> Comments powered by <a href="https://disqus.com/">Disqus</a>.</p></div><script src="/assets/js/lib/jquery.disqusloader.min.js"></script> <script> var options = { scriptUrl: '//abruptly.disqus.com/embed.js', disqusConfig: function() { this.page.url = 'https://abruption.github.io/posts/VSCode-Extension-Selective-Lambda-Deploy/'; this.page.identifier = '/posts/VSCode-Extension-Selective-Lambda-Deploy/'; } }; $.disqusLoader('#disqus', options); </script></div></div></div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script> <script type="text/javascript"> const imgs = document.querySelectorAll('#post-wrapper img'); const observer = lozad(imgs); observer.observe(); </script><footer class="d-flex w-100 justify-content-center"><div class="d-flex justify-content-between align-items-center"><div class="footer-left"><p class="mb-0"> © 2026 <a href="https://github.com/abruption">LEE YEONGUK</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy/" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-xl-11 post-content"><div id="search-hints"><h4 class="text-muted mb-4">Trending Tags</h4><a class="post-tag" href="/tags/data-structure/">Data Structure</a> <a class="post-tag" href="/tags/mac/">Mac</a> <a class="post-tag" href="/tags/lambda/">Lambda</a> <a class="post-tag" href="/tags/serverless/">Serverless</a> <a class="post-tag" href="/tags/ubuntu/">Ubuntu</a> <a class="post-tag" href="/tags/npm/">npm</a> <a class="post-tag" href="/tags/claude-code/">claude code</a> <a class="post-tag" href="/tags/node-js/">Node.js</a> <a class="post-tag" href="/tags/apple/">Apple</a> <a class="post-tag" href="/tags/automation/">automation</a></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a> <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.7.3/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="https://abruption.github.io{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"><div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>{categories}</div><div><i class="fa fa-tag fa-fw"></i>{tags}</div></div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No result founds.</p>' }); </script>
