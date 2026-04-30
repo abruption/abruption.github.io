@@ -13,6 +13,8 @@ order: 4
 
 ## History
 - 퀸텟시스템즈 R&D · 프로 (2021.08 ~)
+- 인천시교육청 초등교육과 · 행정실무원 (2019.10 ~ 2020.01)
+- 인천광역시 서부교육지원청 평생교육건강과 · 행정실무원 (2019.07 ~ 2019.09)
 - 인하공업전문대학 컴퓨터정보과 (2016.03 ~ 2022.02)
 
 ## Gadget
@@ -28,6 +30,7 @@ order: 4
 ## Interested
 - Cloud-Native Architecture & AWS Serverless
 - AI / Multi-Agent Systems (LangChain, LangGraph)
+- Claude Code & AI-Assisted Development
 - Travel & Aviation (SIA KrisFlyer, Star Alliance)
 - Apple Ecosystem
 - Credit Card Rewards Optimization
