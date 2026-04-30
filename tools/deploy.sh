@@ -63,7 +63,7 @@ deploy() {
   if $_no_branch; then
     git push -u origin "$PAGES_BRANCH"
   else
-    git push -f
+    git push --force-with-lease
   fi
 }
 
