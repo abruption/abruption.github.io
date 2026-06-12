@@ -33,7 +33,7 @@ order: 4
 2015년 첫 해외여행(베트남 하노이)부터 현재까지의 비행 기록입니다.
 
 <div class="stat-grid">
-  <div class="stat-card"><div class="value">77</div><div class="label">Total Flights</div></div>
+  <div class="stat-card"><div class="value">75</div><div class="label">Total Flights</div></div>
   <div class="stat-card"><div class="value">33</div><div class="label">Trips</div></div>
   <div class="stat-card"><div class="value">11</div><div class="label">Years Active</div></div>
   <div class="stat-card"><div class="value">22</div><div class="label">Airports</div></div>
@@ -82,12 +82,12 @@ order: 4
     { from: 'GMP', to: 'HND', flights: 1, years: '2022', type: 'intl', flt: 'KE2101' },
     { from: 'ICN', to: 'KIX', flights: 6, years: '2016-2024', type: 'intl', flt: 'MM006/009, OZ114/113, LJ237' },
     { from: 'ICN', to: 'FUK', flights: 6, years: '2017-2019', type: 'intl', flt: 'ZE641/642, LJ227/226, KE789/782' },
-    { from: 'ICN', to: 'CTS', flights: 6, years: '2017-2023', type: 'intl', flt: 'TW251/252, LJ231/232, KE769/770' },
+    { from: 'ICN', to: 'CTS', flights: 4, years: '2017, 2023', type: 'intl', flt: 'TW251/252, KE769/770' },
     { from: 'ICN', to: 'NGO', flights: 6, years: '2018-2025', type: 'intl', flt: '7C1602/1601, LJ348, OZ122/123' },
     { from: 'ICN', to: 'BKK', flights: 6, years: '2023-2025', type: 'intl', flt: 'YP601/602, KE657/652, TG659/BR068' },
     { from: 'ICN', to: 'HKT', flights: 2, years: '2024', type: 'intl', flt: 'KE663/664' },
     { from: 'ICN', to: 'SIN', flights: 3, years: '2026', type: 'intl', flt: 'OZ751, SQ601(p), SQ608(p)' },
-    { from: 'ICN', to: 'CEB', flights: 4, years: '2019', type: 'intl', flt: 'LJ025/026, Z29047/Z27046' },
+    { from: 'ICN', to: 'CEB', flights: 4, years: '2016, 2019', type: 'intl', flt: 'LJ025/026, Z29047/Z27046' },
     { from: 'ICN', to: 'TPE', flights: 4, years: '2018-2019', type: 'intl', flt: 'CI161/162, KE691/694' },
     { from: 'ICN', to: 'HKG', flights: 2, years: '2019', type: 'intl', flt: 'ZE931, RS502' },
     { from: 'ICN', to: 'DPS', flights: 2, years: '2025', type: 'intl', flt: 'KE633/634' },
@@ -181,7 +181,7 @@ order: 4
   var airlines = [
     { name: 'Korean Air', code: 'KE', count: 20, color: '#0064D2' },
     { name: 'Asiana', code: 'OZ', count: 11, color: '#C8102E' },
-    { name: 'Jin Air', code: 'LJ', count: 8, color: '#FF6D00' },
+    { name: 'Jin Air', code: 'LJ', count: 6, color: '#FF6D00' },
     { name: 'Singapore Air', code: 'SQ', count: 5, color: '#F9A825' },
     { name: "T'way Air", code: 'TW', count: 4, color: '#E91E63' },
     { name: 'Jeju Air', code: '7C', count: 3, color: '#FF5722' },
@@ -239,7 +239,7 @@ order: 4
 <tr><td>Tokyo Haneda (HND)</td><td>1</td><td>-</td></tr>
 <tr><td>Osaka (KIX)</td><td>3</td><td>MM009, OZ113</td></tr>
 <tr><td>Fukuoka (FUK)</td><td>4</td><td>ZE642, LJ226, KE782, OZ135(t)</td></tr>
-<tr><td>Sapporo (CTS)</td><td>3</td><td>TW252, LJ232, KE770</td></tr>
+<tr><td>Sapporo (CTS)</td><td>2</td><td>TW252, KE770</td></tr>
 <tr><td>Nagoya (NGO)</td><td>3</td><td>7C1601, LJ348, OZ123</td></tr>
 <tr><td rowspan="2">Thailand</td><td>Bangkok (BKK)</td><td>3</td><td>YP602, KE652, BR068(t)</td></tr>
 <tr><td>Phuket (HKT)</td><td>1</td><td>KE664</td></tr>
@@ -266,10 +266,10 @@ order: 4
 (function() {
   var data = [
     {year:'2015',count:2},{year:'2016',count:3},{year:'2017',count:10},{year:'2018',count:6},
-    {year:'2019',count:14},{year:'2020',count:0},{year:'2021',count:0},{year:'2022',count:4},
+    {year:'2019',count:12},{year:'2020',count:0},{year:'2021',count:0},{year:'2022',count:4},
     {year:'2023',count:5},{year:'2024',count:10},{year:'2025',count:12},{year:'2026',count:11}
   ];
-  var max = 14;
+  var max = 12;
   var container = document.getElementById('yearly-chart');
   data.forEach(function(d) {
     var col = document.createElement('div');
@@ -299,5 +299,5 @@ order: 4
 
 <br>
 
-> Data source: Flighty App and Korea Immigration Service. Last updated April 2026.
+> Data source: Flighty App and Korea Immigration Service. Last updated June 2026.<br>Cebu was also visited in Jan 2016 per immigration records (flight details unavailable, not counted in flight totals).
 {: .prompt-info }
