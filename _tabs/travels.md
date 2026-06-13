@@ -34,7 +34,7 @@ order: 4
 
 <div class="stat-grid">
   <div class="stat-card"><div class="value">75</div><div class="label">Total Flights</div></div>
-  <div class="stat-card"><div class="value">33</div><div class="label">Trips</div></div>
+  <div class="stat-card"><div class="value">32</div><div class="label">Trips</div></div>
   <div class="stat-card"><div class="value">11</div><div class="label">Years Active</div></div>
   <div class="stat-card"><div class="value">22</div><div class="label">Airports</div></div>
   <div class="stat-card"><div class="value">18</div><div class="label">Airlines</div></div>
