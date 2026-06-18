@@ -50,3 +50,12 @@ tags: [태그1, 태그2]
 ## 배포
 
 `master` 브랜치에 push하면 GitHub Actions가 자동으로 빌드 후 `gh-pages` 브랜치에 배포한다. 별도의 수동 배포 작업은 필요 없다.
+
+## 규칙 파일
+
+| 규칙 | 경로 | 내용 |
+|------|------|------|
+| 브랜치 전략 | `.claude/rules/branch-strategy.md` | 브랜치 네이밍, 커밋 메시지 컨벤션, 워크플로우 |
+| PR 생성 규칙 | `.claude/rules/pr-template.md` | PR 템플릿 필수 포맷, 자동 Close 방지 조건, `gh pr create` 사용법 |
+
+**중요**: PR body가 템플릿 포맷에 맞지 않으면 `issue-pr-interceptor` 워크플로우에 의해 자동 Close된다. PR 생성 전 `.claude/rules/pr-template.md`를 반드시 참조할 것.
