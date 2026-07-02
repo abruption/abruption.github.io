@@ -1,0 +1,769 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Building-Two-CLIs-From-Real-Pain-Points/</loc>
+      
+        <lastmod>2026-07-01T10:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Claude-Code-Headless-Billing-And-PTY-JSONL-Watch/</loc>
+      
+        <lastmod>2026-06-17T14:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/CLI-Auth-Without-Secret-Key/</loc>
+      
+        <lastmod>2026-04-30T10:46:33+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Claude-Code-Hooks-Practical-Guide/</loc>
+      
+        <lastmod>2026-04-30T09:32:48+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Claude-Code-AI-Dev-Team-Modes/</loc>
+      
+        <lastmod>2026-04-15T10:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Multi-Agent-Pipeline-Architecture/</loc>
+      
+        <lastmod>2026-04-15T09:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/LangChain-Prompt-Templates/</loc>
+      
+        <lastmod>2026-03-11T10:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/LangChain-Structured-Output/</loc>
+      
+        <lastmod>2026-03-11T09:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Obsidian-Claude-Code-Vault-Automation/</loc>
+      
+        <lastmod>2026-03-11T02:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/iPad-Claude-Code-Remote-Setup/</loc>
+      
+        <lastmod>2026-03-04T10:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/KrisFlyer-Mile-Redemption-Strategy/</loc>
+      
+        <lastmod>2026-03-01T09:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Electron-App-Windows-To-MacOS-Cross-Platform/</loc>
+      
+        <lastmod>2024-12-15T10:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Microsoft-Garnet/</loc>
+      
+        <lastmod>2024-03-30T14:34:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Event-Driven-Service-Orchestration-With-Step-Functions/</loc>
+      
+        <lastmod>2023-07-13T11:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/VSCode-Extension-Selective-Lambda-Deploy/</loc>
+      
+        <lastmod>2023-06-16T13:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Semver-Based-Mobile-App-Force-Update/</loc>
+      
+        <lastmod>2023-04-05T12:00:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/PDF-Function-Technical-Review/</loc>
+      
+        <lastmod>2022-07-30T00:14:07+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Google-Analytics-API/</loc>
+      
+        <lastmod>2022-07-30T00:14:07+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/PDF-Parsing-Library-Review/</loc>
+      
+        <lastmod>2022-07-30T00:14:07+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Address-API-Technical-review/</loc>
+      
+        <lastmod>2022-07-30T00:14:07+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Lambda-Structure-And-LifeCycle/</loc>
+      
+        <lastmod>2022-07-30T00:22:04+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/AWS-Cognito-MFA-Technical-Review/</loc>
+      
+        <lastmod>2022-07-30T00:14:07+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/S3-Image-Resize-Technical-review/</loc>
+      
+        <lastmod>2022-07-30T00:14:07+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Image-Resize-Lambda-With-Library/</loc>
+      
+        <lastmod>2022-07-30T00:14:07+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Nodejs-Design-Pattern/</loc>
+      
+        <lastmod>2021-09-17T14:25:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/What-is-AWS-Lambda/</loc>
+      
+        <lastmod>2021-09-03T14:25:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Refactoring-JavaScript/</loc>
+      
+        <lastmod>2021-09-03T14:25:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Spring-Framework/</loc>
+      
+        <lastmod>2022-01-23T00:24:05+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Failed-to-Connect-ubuntu/</loc>
+      
+        <lastmod>2021-02-22T11:19:00+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Oh-My-Zsh-on-Mac/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Change-basic-shell-on-mac/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Golang-on-Silicon-Mac/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Jekyll-on-Silicon-Mac/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/M1-Mac-Install-Homebrew/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/mac-xcrun-error/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Mac-Remove-Last-login/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/MySQL-password-insecure/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Mac-Default-Python/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Java-mysql-error/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/apt-package-managment/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Algorithm/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/SDLC/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Linux-Command/</loc>
+      
+        <lastmod>2022-01-23T00:27:28+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Circular-Queue/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Linux-Backup/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Queue/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/stack-2/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Stack/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Dual-Circular-list/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/Circular-list/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://blog.abruption.top/posts/linked-list/</loc>
+      
+        <lastmod>2021-02-22T11:36:34+09:00</lastmod>
+      
+
+      
+        <changefreq>weekly</changefreq>
+      
+
+      
+          <priority>0.5</priority>
+      
+    </url>
+  
+</urlset>
