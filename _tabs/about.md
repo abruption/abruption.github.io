@@ -20,7 +20,7 @@ order: 5
 ## Gadget
 - Apple MacBook Pro 14" (2024), M4 Pro / 24GB / 512GB
 - Apple Mac mini, M4 / 16GB / 256GB
-- Apple iPhone 16 Pro, White / 128GB
+- Apple iPhone 17 Pro, Silver / 256GB
 - Apple iPad mini 6
 - Apple Watch Ultra 1
 - Apple AirPods 4 (ANC)
