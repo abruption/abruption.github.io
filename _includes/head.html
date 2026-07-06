@@ -40,6 +40,11 @@
     {% endif %}
   {% endif %}
 
+  <!-- Cloudflare Web Analytics -->
+  {% if jekyll.environment == 'production' and site.cloudflare_analytics_token != empty %}
+    {% include cloudflare-analytics.html %}
+  {% endif %}
+
   <!-- jsDelivr CDN -->
   <link rel="preconnect" href="cdn.jsdelivr.net">
   <link rel="dns-prefetch" href="cdn.jsdelivr.net">
