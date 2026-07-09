@@ -38,4 +38,4 @@ order: 5
 
 ## Link
 - GitHub : <https://github.com/abruption>
-- Landing Page : <https://abruption.top>
+- Landing Page : <https://abruption.dev>
