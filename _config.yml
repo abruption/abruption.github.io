@@ -15,7 +15,7 @@ description: >-                        # used by seo meta and the atom feed
   Code · Travel · Life
 
 # fill in the base hostname & protocol for your site, e.g., 'https://username.github.io'
-url: 'https://blog.abruption.top'
+url: 'https://blog.abruption.dev'
 
 author: LEE YEONGUK                  # change to your full name
 
@@ -58,8 +58,8 @@ google_analytics:
     proxy_endpoint: ''
     cache: false  # pv data local cache, good for the users from GFW area.
 
-# Cloudflare Web Analytics (privacy-first, no cookies) — site token from the abruption.top zone
-cloudflare_analytics_token: '5eda088d3abf49888f77831a7c6e1901'
+# Cloudflare Web Analytics (privacy-first, no cookies) — site token from the abruption.dev zone
+cloudflare_analytics_token: '4dd3dffe3e0a4f7c977d6ad86915dedf'
 
 disqus:
   comments: true  # boolean type, the global switch for posts comments.
