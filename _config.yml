@@ -34,7 +34,10 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: google_meta_tag_verification # change to your verification string
+# Left unset: Search Console verification was never completed for this property. The Chirpy
+# default placeholder used to ship here, and jekyll-seo-tag rendered it as a real <meta> tag
+# pointing at a token that does not exist. Set a real string here if the site is ever verified.
+google_site_verification:
 naver_site_verification: c6eb6453af687c2ab39f65b551c83ec084a4344b
 # --------------------------
 
@@ -49,7 +52,11 @@ timezone: Asia/Seoul
 future: true
 
 google_analytics:
-  id: ''          # Fill with your Google Analytics ID
+  # Left null on purpose: this site uses Cloudflare Web Analytics (cloudflare_analytics_token
+  # below), not GA, and no GA property exists. Must be null rather than '' — an empty string is
+  # truthy in Liquid, so js-selector.html's `{% if site.google_analytics.id %}` still passed and
+  # every page loaded gtag.js with an empty id (collecting nothing).
+  id:
   pv:
     # The Google Analytics pageviews switch.
     # DO NOT enable it unless you know how to deploy the Google Analytics superProxy.
