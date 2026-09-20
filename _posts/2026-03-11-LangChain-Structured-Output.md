@@ -6,9 +6,9 @@ categories: [Programming, LangChain]
 tags: [LangChain, TypeScript, LLM, Zod, OutputParser]
 ---
 
-LLM을 프로덕션에 도입할 때 가장 자주 맞닥뜨리는 문제 중 하나는 **출력 형식의 불안정성**입니다. 모델에게 JSON으로 응답해달라고 요청해도 따옴표가 어긋나거나, 필드 이름이 달라지거나, 아예 다른 형식으로 응답하는 경우가 생깁니다.
+모델에게 JSON으로 답해달라고 시키는 건 쉽다. 실제로 그 응답을 DB에 넣거나 다음 API로 넘기려고 하면 이야기가 달라진다. 따옴표가 어긋나고, 필드 이름이 달라지고, 가끔은 JSON 대신 설명문이 통째로 돌아온다.
 
-LangChain은 이 문제를 두 가지 방법으로 해결합니다.
+LangChain에서는 보통 두 가지 방법을 조합한다.
 
 1. `.withStructuredOutput()` — 모델이 처음부터 스키마에 맞게 출력하도록 강제
 2. `OutputFixingParser` — 출력이 스키마와 맞지 않을 경우 LLM이 자동으로 수정
@@ -17,7 +17,7 @@ LangChain은 이 문제를 두 가지 방법으로 해결합니다.
 
 ## `.withStructuredOutput()` 메서드
 
-이 메서드는 Zod 스키마 또는 JSON 스키마를 전달받아, 모델이 해당 스키마와 일치하는 구조화된 출력을 반환하도록 필요한 파라미터와 출력 파서를 자동으로 설정합니다.
+이 메서드는 Zod 스키마나 JSON 스키마를 받아서, 모델이 그 구조에 맞는 출력을 내도록 필요한 설정과 출력 파서를 붙인다.
 
 ### 기본 사용법
 
@@ -49,11 +49,11 @@ console.log(response)
 
 ### 포인트: 스키마 이름(`name`)을 반드시 전달하라
 
-`withStructuredOutput(schema, { name: 'schemaName' })` 형태로 이름을 함께 전달하면, 모델에게 이 스키마가 무엇을 나타내는지 추가 컨텍스트를 제공할 수 있습니다. 공식 문서에서도 이름을 전달하면 성능이 향상된다고 명시하고 있습니다.
+`withStructuredOutput(schema, { name: 'schemaName' })`처럼 이름을 함께 주면 모델이 이 스키마가 무엇을 나타내는지 알 수 있는 단서가 하나 더 생긴다. 스키마 이름 하나로 모든 문제가 해결되는 건 아니지만, 생략할 이유도 별로 없다.
 
 ### 포인트: Zod의 `.describe()`를 활용하라
 
-각 필드에 `.describe()`로 설명을 붙이면 모델이 해당 필드에 어떤 값을 넣어야 하는지 더 잘 이해합니다. 스키마만 정의하고 설명을 생략하면 필드 이름만으로 모델이 추론해야 하므로 정확도가 떨어질 수 있습니다.
+각 필드에 `.describe()`를 붙이면 모델이 어떤 값을 넣어야 하는지 이해하기 쉬워진다. 설명이 없으면 필드 이름만 보고 추측해야 하므로, 이름이 짧거나 도메인 용어일수록 손해가 커진다.
 
 ```ts
 // 설명 없음 (모델이 필드 이름만으로 추론)
@@ -73,13 +73,13 @@ const schema = z.object({
 
 ## `OutputFixingParser`로 오류 자동 복구
 
-`.withStructuredOutput()`을 사용하더라도, 모든 상황에서 모델이 완벽한 출력을 보장하지는 않습니다. 특히 오래된 모델이나 파인튜닝된 소형 모델을 사용할 경우 파싱 오류가 빈번하게 발생할 수 있습니다.
+`.withStructuredOutput()`을 사용해도 모든 상황에서 출력이 완벽해지는 건 아니다. 특히 오래된 모델이나 파인튜닝된 소형 모델에서는 파싱 오류가 자주 생길 수 있다.
 
-`OutputFixingParser`는 이런 상황을 대비한 안전망입니다. 기존 파서가 실패하면, 잘못된 출력과 수정 지침을 담아 다른 LLM을 호출하여 오류를 자동으로 복구합니다.
+`OutputFixingParser`는 이런 상황을 위한 안전망이다. 기존 파서가 실패하면 잘못된 출력과 수정 지침을 다시 LLM에 보내서 고친 뒤 재파싱한다.
 
 ### 문제 상황
 
-작은따옴표를 사용한 잘못된 JSON이 들어왔다고 가정합니다.
+작은따옴표가 들어간 잘못된 JSON을 가정해보자.
 
 ```ts
 import { z } from "zod";
@@ -101,7 +101,7 @@ await parser.parse(misformatted);
 // Error: SyntaxError: Expected property name or '}' in JSON at position 1
 ```
 
-작은따옴표(`'`)는 유효한 JSON이 아니기 때문에 파싱이 실패합니다.
+작은따옴표(`'`)는 유효한 JSON이 아니어서 파싱이 실패한다.
 
 ### `OutputFixingParser` 적용
 
@@ -125,7 +125,7 @@ console.log(result);
 // }
 ```
 
-`OutputFixingParser.fromLLM(model, parser)`에서 두 번째 인수로 기존 파서를 전달합니다. 파싱이 실패하면 내부적으로 다음과 같은 흐름으로 동작합니다.
+`OutputFixingParser.fromLLM(model, parser)`의 두 번째 인수에는 기존 파서를 넣는다. 파싱이 실패하면 내부적으로 다음 순서가 돌아간다.
 
 1. 원본 출력과 기대 형식을 담은 수정 요청 프롬프트 생성
 2. 전달된 `model`에 수정 요청
@@ -142,14 +142,14 @@ console.log(result);
 
 ---
 
-## 정리
+## 그래서 어떻게 고를까
 
-LangChain에서 구조화된 출력을 다루는 핵심은 두 가지입니다.
+LangChain에서 구조화된 출력을 다룰 때 기억할 건 두 가지다.
 
 - **처음부터 제대로**: `.withStructuredOutput()` + Zod 스키마의 `.describe()` 활용
 - **실패에 대비**: `OutputFixingParser`로 자동 복구 레이어 추가
 
-특히 사용자 입력을 기반으로 LLM이 응답을 생성하고, 그 결과를 DB에 저장하거나 다른 API로 전달하는 파이프라인에서는 출력 형식의 안정성이 전체 시스템의 신뢰성과 직결됩니다. 두 방법을 함께 적용하면 파싱 실패로 인한 예외를 효과적으로 줄일 수 있습니다.
+사용자 입력을 받아 DB에 저장하거나 다른 API로 넘기는 파이프라인이라면 출력 형식이 흔들리는 순간 뒤 단계도 같이 흔들린다. 다만 `OutputFixingParser`는 실패할 때 LLM을 한 번 더 호출한다. 비용과 지연을 감수할 수 있을 때 붙이는 게 맞고, 최신 모델에서 구조화 출력이 안정적이라면 `.withStructuredOutput()`만으로 끝내도 된다.
 
 ## 참고
 

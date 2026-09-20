@@ -27,7 +27,7 @@ Mac Mini - 자택, 항상 켜져 있음
 
 ## 왜 Tailscale인가
 
-원격 접속 방법을 고민하면서 포트 포워딩, DDNS, Cloudflare Tunnel을 전부 검토했다. 결론부터 말하면 이 용도에는 Tailscale이 압도적으로 간단하다.
+원격 접속 방법을 고민하면서 포트 포워딩, DDNS, Cloudflare Tunnel까지 전부 검토했다. 내 결론은 Tailscale이었다. 이 용도에서는 설정이 제일 덜 필요했다.
 
 Cloudflare Tunnel도 써봤는데, SSH 접속하려면 `cloudflared access ssh` 프록시를 거쳐야 하고, 도메인도 필요하고, iOS에서 설정이 복잡하다. 웹 서비스를 외부에 공개할 때는 Cloudflare가 맞지만, 내 기기끼리 사설 네트워크를 만드는 건 Tailscale이 훨씬 적합하다. 앱 설치하고 로그인하면 끝이다. 진짜로.
 
@@ -139,7 +139,7 @@ ClientAliveCountMax 3
 
 ## 두 달 사용 후기
 
-결론부터 말하면, iPad가 사실상 개발 터미널이 됐다. 카페에서 코드 리뷰하다가 이동 중에 이어서 하고, 집에 돌아와서 MacBook으로 넘어간다. tmux 세션이 며칠이고 살아 있어서 컨텍스트가 끊기지 않는 게 가장 큰 장점이다.
+두 달 써보니 iPad가 사실상 개발 터미널이 됐다. 카페에서 코드 리뷰하다가 이동 중에 이어서 하고, 집에 돌아와서는 MacBook으로 넘어간다. tmux 세션이 며칠이고 살아 있어서 컨텍스트가 끊기지 않는 게 가장 큰 장점이다.
 
 Wi-Fi에서 셀룰러로 전환될 때 Tailscale이 자동으로 재연결하는 것도 좋다. SSH는 끊기지만 tmux가 살아 있으니 `tmux attach`만 하면 복귀한다.
 
