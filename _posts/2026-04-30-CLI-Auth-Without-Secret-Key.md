@@ -44,7 +44,7 @@ CLI (my-tool login)
   └─ 10. ~/.my-tool/current-jwt에 저장 (0600 퍼미션)
 ```
 
-이 패턴은 GitHub CLI(`gh auth login`)나 Google Cloud CLI(`gcloud auth login`)에서도 쓰는 방식이다. 로컬 루프백 서버를 띄워서 브라우저 인증 결과를 받아오는 것.
+이 방식은 GitHub CLI(`gh auth login`)나 Google Cloud CLI(`gcloud auth login`)에서도 볼 수 있다. 로컬 루프백 서버를 잠깐 띄우고, 브라우저에서 끝난 인증 결과를 다시 CLI로 받는 구조다.
 
 ### Loopback 서버 구현
 
@@ -296,13 +296,13 @@ API 요청 (매회)
 
 ## 이 패턴이 맞지 않는 경우
 
-이 구조가 모든 CLI 도구에 적합한 건 아니다.
+이 방식이 모든 CLI 도구에 맞는 건 아니다.
 
 **CI/CD 환경**에서는 브라우저가 없다. 이 경우 Service Account용 API Key를 환경변수로 주입하는 기존 방식이 맞다. Hook에 `AUTO_LOGIN=0`을 설정하고 JWT를 직접 주입하는 우회 경로를 열어두는 게 좋다.
 
 **오프라인 환경**에서는 JWKS 엔드포인트에 접근할 수 없다. `jose`의 캐시가 있어서 한 번 가져온 키는 10분간 유효하지만, 장시간 오프라인이면 키 로테이션을 놓칠 수 있다. 이런 경우 Public Key를 로컬에 번들링하는 방식을 고려해야 한다.
 
-**Clerk가 아닌 IdP**를 쓴다면, Loopback 서버의 HTML 부분만 바꾸면 된다. Auth0든 Firebase Auth든, 브라우저에서 JWT를 발급받아 `POST /token`으로 보내는 구조는 동일하다. 핵심은 "CLI가 Secret Key 없이, 브라우저를 통해 토큰을 받는다"는 패턴 자체다.
+**Clerk가 아닌 IdP**를 쓴다면 Loopback 서버의 HTML 부분을 바꾸면 된다. Auth0든 Firebase Auth든, 브라우저에서 JWT를 발급받아 `POST /token`으로 보내는 흐름은 같다. 여기서 가져갈 건 Clerk 자체보다, CLI가 Secret Key를 들고 있지 않은 상태에서 브라우저를 통해 토큰을 받는다는 패턴이다.
 
 ## 참고
 
