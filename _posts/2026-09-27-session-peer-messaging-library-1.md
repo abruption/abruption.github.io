@@ -1,5 +1,5 @@
 ---
-title: "Claude Code와 Codex 세션을 잇는 메시지 전달 라이브러리 개발기 (1부)"
+title: "Claude Code와 Codex가 메시지를 주고받게 만들기까지 — session-peer 1부"
 author: abruption
 date: 2026-09-27 10:00:00 +0900
 categories: [Programming, Open Source]

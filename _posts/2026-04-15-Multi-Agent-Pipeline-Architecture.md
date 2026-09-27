@@ -1,5 +1,5 @@
 ---
-title: "자연어 한 줄로 소프트웨어를 만드는 6-Agent 파이프라인 설계기"
+title: "“주문 관리 시스템을 만들어줘” — 여섯 에이전트가 설계 문서를 만들기까지"
 author: abruption
 date: 2026-04-15 09:00:00 +0900
 categories: [Programming, AI]
