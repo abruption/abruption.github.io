@@ -4,6 +4,7 @@ author: abruption
 date: 2026-09-27 10:00:00 +0900
 categories: [Programming, Open Source]
 tags: [session-peer, claude-code, codex, ssh, ai-agents, open-source]
+mermaid: true
 ---
 
 ## 먼저 다뤘던 건 Claude Code의 SSH 인박스였다
