@@ -1,5 +1,5 @@
 ---
-title: "Claude Code로 148개 API를 자동 구현한 이야기 — AI 개발팀 3가지 모드"
+title: "148개 API 구현을 Claude Code에 맡겨봤다 — 세 가지 작업 방식 비교"
 author: abruption
 date: 2026-04-15 10:00:00 +0900
 categories: [Programming, Claude Code]

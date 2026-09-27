@@ -1,5 +1,5 @@
 ---
-title: "실전에서 겪은 불편함으로 CLI 두 개 만들기 — agy-cli-usage와 oci-cost-cli"
+title: "매번 손으로 하던 일을 줄이려고 CLI 두 개를 만들었다 — agy-cli-usage와 oci-cost-cli"
 author: abruption
 date: 2026-07-01 10:00:00 +0900
 categories: [Programming, CLI]

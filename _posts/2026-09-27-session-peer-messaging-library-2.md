@@ -1,5 +1,5 @@
 ---
-title: "Claude Code와 Codex 세션을 잇는 메시지 전달 라이브러리 개발기 (2부): 답장을 받기까지"
+title: "메시지를 보냈다고 읽은 건 아니었다 — session-peer 2부"
 author: abruption
 date: 2026-09-27 11:00:00 +0900
 categories: [Programming, Open Source]
