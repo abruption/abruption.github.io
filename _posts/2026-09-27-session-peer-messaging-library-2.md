@@ -4,6 +4,7 @@ author: abruption
 date: 2026-09-27 11:00:00 +0900
 categories: [Programming, Open Source]
 tags: [session-peer, claude-code, codex, ssh, ai-agents, open-source]
+mermaid: true
 ---
 
 ## `posted`는 답장이 아니다

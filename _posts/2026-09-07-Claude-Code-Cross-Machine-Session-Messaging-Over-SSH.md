@@ -188,3 +188,11 @@ Claude Code Skill도 같이 넣어뒀다. 스크립트가 전송이라는 결정
 ---
 
 Claude Code v2.1.263, macOS 15 / Ubuntu 24.04 (arm64)에서 확인했다. 소켓 프로토콜은 문서화돼 있지만 세션 레지스트리 스키마는 아니다. 버전이 올라가면 깨질 수 있는 쪽은 후자다.
+
+## 업데이트 (2026-09-27): cc-peer 이후
+
+이 글에서 소개한 `cc-peer`라는 이름의 패키지는 0.5.1을 마지막으로 배포를 마쳤고, [PyPI에서도 보관 상태](https://pypi.org/project/cc-peer/0.5.1/)다. 다만 세션 간 메시지를 주고받는 도구 개발까지 끝낸 건 아니다. 저장소 이름을 [`session-peer`](https://github.com/abruption/session-peer)로 바꾸고 기존 Git 이력과 이슈를 이어 받아 개발을 계속했다.
+
+Claude Code만 다루던 cc-peer에서 한 걸음 넓혀, session-peer는 Claude Code와 Codex의 기존 세션을 로컬이나 SSH로 연결한다. 첫 안정판 v1.0.0은 [2026년 9월 24일 공개](https://github.com/abruption/session-peer/releases/tag/v1.0.0)됐다. 예전 `cc-peer`가 자동으로 새 패키지로 바뀌는 건 아니어서, 이어서 써보려면 [전환 안내](https://github.com/abruption/session-peer/blob/v1.0.1/docs/cli-reference.md#moving-from-cc-peer)를 확인하고 `session-peer`를 따로 설치해야 한다.
+
+만들면서 겪은 과정은 [session-peer 개발기 1편](https://blog.abruption.dev/posts/session-peer-messaging-library-1/)과 [2편](https://blog.abruption.dev/posts/session-peer-messaging-library-2/)에 이어 적었다.
