@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+    # Empty commits have no changed paths and do not trigger this filtered workflow.
     paths-ignore:
       - .gitignore
       - README.md
