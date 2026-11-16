@@ -45,7 +45,7 @@ As a convenience, `bash tools/test.sh --build` runs the production build before 
 
 1. Create a topic branch from `master`, make the post or documentation change, and open a pull request targeting `master`. Follow the repository's pull request template and branch guidelines.
 2. After an approved pull request is merged, a non-ignored push to `master` runs the **Automatic build** workflow. It uses Ruby 3.2, runs the production Jekyll build and `bash tools/test.sh`, then invokes `tools/deploy.sh`.
-3. The deployment workflow publishes the generated site to `gh-pages`. GitHub Pages is configured to publish from **GitHub Actions**, not from a manually maintained branch.
+3. `tools/deploy.sh` pushes the generated site to `gh-pages`. GitHub then runs a separate `pages-build-deployment` deployment for that `gh-pages` commit. Check both the **Automatic build** run and the Pages deployment run: success of the first alone does not confirm that the site was served.
 
 The workflow deliberately ignores changes limited to `README.md`, `.gitignore`, or `LICENSE`. A README-only change still runs the pull request CI checks, but does not trigger a public Pages deployment after merge. Changes to `_posts/` do trigger the publishing workflow.
 
