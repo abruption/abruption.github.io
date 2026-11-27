@@ -1,12 +1,14 @@
 ---
-title: "서브에이전트에 어떤 모델을 쓸지 고민하다 Aptly를 만들었습니다"
+title: "OpenAI API 크레딧으로 서브에이전트 모델을 고르는 Aptly"
 author: abruption
 date: 2026-11-27 09:00:00 +0900
 categories: [Programming, Open Source]
 tags: [aptly, subagents, codex, claude-code, mcp]
 ---
 
-README 번역 검토를 맡기는 일과 여러 파일에 걸친 변경을 검토하는 일은 둘 다 에이전트에게는 ‘리뷰’입니다. 그런데 두 작업에 매번 같은 모델과 추론 강도를 쓸 이유는 없었습니다. 작업을 나눌 때마다 모델까지 고르는 건 번거롭고, 그렇다고 작업 이름만 보고 맡기기엔 빠지는 정보가 많습니다. 그래서 Claude Code와 Codex에서 서브에이전트를 띄우기 전에 작업에 맞는 프로필을 추천해 주는 Aptly를 만들었습니다.
+ChatGPT 요금제 혜택으로 받을 수 있는 OpenAI API 크레딧을 어디에 쓰면 좋을지 고민했습니다. 제가 고른 건 Claude Code나 Codex에서 서브에이전트를 띄우기 전에 모델과 추론 강도를 고르는 일이었습니다. README 번역 검토와 여러 파일에 걸친 변경 검토는 둘 다 ‘리뷰’지만, 두 작업에 매번 같은 모델을 쓸 이유는 없었습니다. 이 판단을 OpenAI Decisions API에 맡겨 보려고 Aptly를 만들었습니다.
+
+대상 ChatGPT 요금제에서 활성화한 API 크레딧은 연결된 API 조직에 들어갑니다. Aptly에서 쓰는 API 키도 그 조직의 키여야 이 혜택을 활용할 수 있습니다. 여기서 크레딧을 쓰려는 부분은 Decisions API 추천 요청입니다. 추천 이후 서브에이전트 실행은 호스트가 담당하고, 그 실행의 사용량은 호스트가 연결한 계정과 모델에 따릅니다. [OpenAI API 크레딧 안내](https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions)
 
 ## 작업 내용을 보고 후보 중에서 고릅니다
 
@@ -31,7 +33,7 @@ URL과 요약을 보낸 조건에서 추천받은 Terra/high로 호스트의 서
 
 Hook을 연결하면 어디까지 외부로 보내는지도 정해야 합니다. 자동 추천을 위한 전송 범위는 `none`, `description`, `excerpt` 중에서 선택합니다. 새 등록은 선택 전까지 자동 전송을 하지 않습니다. `description`은 호출자가 제공한 설명을 사용하고, `excerpt`는 지원하는 호출에서 작업 내용의 일부를 잘라 보낼 수 있습니다. 발췌는 익명화가 아니므로 업무 자료를 다룰 때는 작업명과 설명에도 어떤 내용이 들어 있는지 확인해야 합니다. 자동 전송을 꺼 두더라도 직접 추천을 요청할 때 작성한 요약은 API에 전달됩니다. [전송 범위 문서](https://github.com/abruption/aptly/blob/v0.1.22/docs/guide/ko/transmission.md)
 
-Aptly를 만들면서 추천을 잘하는 것만큼 추천을 적용할 수 없는 상황을 드러내는 게 중요했습니다. 작업 설명이 부족하면 더 달라고 하고, 실행 조건이 맞지 않으면 결과를 그대로 알려 줍니다. 그렇게 해야 모델을 고르는 일을 맡기더라도 실제로 무엇을 실행했는지 나중에 설명할 수 있습니다.
+API 크레딧을 쓸 반복 작업을 찾다가, 서브에이전트를 띄우기 직전의 모델 선택을 따로 떼어 보게 됐습니다. 다음 과제에서도 비용 차이를 보려면 추천에 얼마가 들었는지와 추천받은 모델이 실제로 얼마나 사용했는지를 각각 기록해야 합니다.
 
 - [Aptly 저장소](https://github.com/abruption/aptly)
 - [Aptly 0.1.22 릴리스](https://github.com/abruption/aptly/releases/tag/v0.1.22)

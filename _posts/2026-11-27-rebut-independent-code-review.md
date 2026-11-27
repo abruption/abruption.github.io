@@ -1,5 +1,5 @@
 ---
-title: "같은 diff를 두 모델에 검토받으려고 Rebut을 만들었습니다"
+title: "OpenAI와 Claude API 크레딧으로 같은 diff를 검토하는 Rebut"
 author: abruption
 date: 2026-11-27 09:01:00 +0900
 categories: [Programming, Open Source]
@@ -7,7 +7,9 @@ tags: [rebut, code-review, mcp, openai, claude]
 mermaid: true
 ---
 
-변경을 만든 에이전트에게 다시 검토를 맡기면, 그 에이전트가 구현할 때 세웠던 가정도 그대로 따라옵니다. 다른 모델에 같은 diff를 보여 주면 어디를 다르게 읽는지 비교해 볼 수 있습니다. 그러려면 리뷰어마다 같은 파일과 같은 수락 기준을 전달하고, 답변의 근거를 원래 자료에서 다시 찾을 수 있어야 합니다. 이 과정을 반복해서 쓰기 위해 Rebut을 만들었습니다.
+OpenAI와 Claude 요금제에서 받을 수 있는 API 크레딧을 코드 검토에 써보고 싶었습니다. 구현을 맡았던 에이전트는 그대로 두고, 같은 diff를 별도의 API 호출로 검토받으면 원래 구현에서 놓친 부분을 다시 볼 기회가 생깁니다. 두 공급자의 결과를 비교할 때는 같은 파일과 같은 수락 기준을 보내고 싶었습니다. 그 과정을 매번 손으로 준비하지 않도록 Rebut을 만들었습니다.
+
+OpenAI의 대상 ChatGPT 요금제 혜택은 연결된 API 조직에, Claude의 대상 요금제 혜택은 Claude Console에서 쓰는 API 크레딧으로 제공됩니다. Rebut을 설정할 때는 공급자별로 크레딧이 있는 API 계정과 키를 확인해야 합니다. 사용 가능한 혜택과 잔액은 각 공급자의 계정에서 확인할 수 있습니다. [OpenAI API 크레딧 안내](https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions) · [Claude API 과금 안내](https://support.claude.com/en/articles/9876003-why-is-claude-api-usage-billed-separately-from-my-paid-claude-plan)
 
 ## 검토에 필요한 자료를 먼저 고정합니다
 
