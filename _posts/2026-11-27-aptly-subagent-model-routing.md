@@ -1,16 +1,17 @@
 ---
-title: "OpenAI API 크레딧으로 서브에이전트 모델을 고르는 Aptly"
+title: "OpenAI Decisions API로 서브에이전트 모델을 고르는 Aptly"
 author: abruption
 date: 2026-11-27 09:00:00 +0900
 categories: [Programming, Open Source]
 tags: [aptly, subagents, codex, claude-code, mcp]
+description: "OpenAI Decisions API에 작업 요약과 후보를 보내 Claude Code와 Codex의 서브에이전트 모델·추론 강도를 추천하는 Aptly를 만들었습니다."
 ---
 
-ChatGPT 요금제 혜택으로 받을 수 있는 OpenAI API 크레딧을 어디에 쓰면 좋을지 고민했습니다. 제가 고른 건 Claude Code나 Codex에서 서브에이전트를 띄우기 전에 모델과 추론 강도를 고르는 일이었습니다. README 번역 검토와 여러 파일에 걸친 변경 검토는 둘 다 ‘리뷰’지만, 두 작업에 매번 같은 모델을 쓸 이유는 없었습니다. 이 판단을 OpenAI Decisions API에 맡겨 보려고 Aptly를 만들었습니다.
+OpenAI Decisions API로 Claude Code와 Codex의 서브에이전트 모델과 추론 강도를 골라 주는 Aptly를 만들었습니다. README 번역 검토와 여러 파일에 걸친 변경 검토는 둘 다 ‘리뷰’입니다. 둘에 매번 같은 모델을 쓸 이유는 없어서, 작업 요약을 보고 미리 정해 둔 후보 중 어떤 조합이 적합한지 Decisions API에 묻기로 했습니다.
 
-대상 ChatGPT 요금제에서 활성화한 API 크레딧은 연결된 API 조직에 들어갑니다. Aptly에서 쓰는 API 키도 그 조직의 키여야 이 혜택을 활용할 수 있습니다. 여기서 크레딧을 쓰려는 부분은 Decisions API 추천 요청입니다. 추천 이후 서브에이전트 실행은 호스트가 담당하고, 그 실행의 사용량은 호스트가 연결한 계정과 모델에 따릅니다. [OpenAI API 크레딧 안내](https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions)
+계기는 ChatGPT 요금제 혜택으로 받을 수 있는 API 크레딧이었습니다. 반복해서 쓰는 작업에 활용하고 싶었고, 서브에이전트를 띄울 때마다 하는 모델 선택이 그 후보였습니다. 대상 요금제에서 활성화한 크레딧은 연결된 API 조직에 들어갑니다. Aptly에서는 그 조직의 API 키로 Decisions 추천을 요청합니다. 이후 서브에이전트의 사용량은 호스트가 연결한 계정과 모델에 따릅니다. [OpenAI API 크레딧 안내](https://help.openai.com/en/articles/20001626-api-credits-benefit-for-eligible-chatgpt-subscriptions)
 
-## 작업 내용을 보고 후보 중에서 고릅니다
+## Decisions API에 어떤 정보를 보내나요
 
 Aptly의 프로필에는 모델과 추론 강도가 함께 들어 있습니다. 추천을 요청하면 Aptly는 작업 요약과 후보 프로필 정보를 OpenAI Decisions API에 보냅니다. 어떤 프로필을 쓸지 판단하는 데 드는 비용과, 추천받은 모델이 실제 작업을 하는 비용은 따로 봐야 합니다. 서브에이전트를 띄우는 건 Claude Code나 Codex가 담당합니다.
 
